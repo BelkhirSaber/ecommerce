@@ -1,0 +1,195 @@
+:root{
+  --belk-main-color: white;
+  --belk-primary: rgba(13, 110, 253, 1);
+  --belk-bg-primary: rgba(13, 110, 253, 0.11);
+  --belk-secondary: #6c7293;
+  --belk-success: #00d25b;
+  --belk-bg-success: rgba(0, 210, 91, 0.11);
+  --belk-info: rgba(13, 202, 240, 1);
+  --belk-bg-info: rgba(13, 202, 240, 0.11);
+  --belk-danger: #fc424a;
+  --belk-bg-danger: rgba(252, 66, 74, 0.11)
+  --belk-warning: rgba(255, 193, 7, 1);
+  --belk-bg-warning: rgba(255, 193, 7, 0.11);
+  --belk-bg-light: #f5f7fb;
+  --belk-dark: #222e3c;
+  --belk-bg-dark: #19222c;
+}
+
+/**
+* Main Rules
+*/
+a{
+  color: inherit !important;
+  text-decoration: none;
+}
+/**
+* End Main Rules
+*/
+
+/**
+* Custom Bootstrap
+*/
+
+.navbar{
+  background-color: var(--belk-bg-dark);
+  color: var(--belk-main-color) !important;
+}
+
+.nav{
+  --bs-nav-link-color: var(--bs-gray-500);
+  --bs-nav-link-hover-color: var(--bs-gray-100);
+}
+
+.nav-link .top-0{
+  top: 10% !important;
+}
+
+.nav-link .start-100{
+  left: 90% !important;
+}
+
+.dropdown-toggle::after{
+  display: none;
+}
+
+.dropdown-menu{
+  top:45px !important;
+  left: auto !important;
+}
+
+/**
+* End Custom Bootstrap
+*/
+
+body{
+  overflow-y:scroll;
+}
+
+/* Navbar */
+/* .nav-link{
+  display: inline-block;
+  padding: .5rem !important;
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  
+} */
+
+/* .nav-link-search{
+  background-color: white;
+  color: var(--belk-danger);
+} */
+/* End Navbar */
+
+/**
+  * ===============================================
+  * ADMIN DASHBOARD
+  * ===============================================
+ */
+/* sidebar */
+#openSidebar{
+  color: var(--bs-gray-500);
+}
+
+#openSidebar:hover{
+  color: var(--bs-gray-100);
+}
+
+/* custom CSS */
+.wrapper-content{
+  display: flex;
+  position: relative;
+}
+.wrapper-content header{
+  width: 100%;
+  height: 60px;
+  margin-left: auto;
+}
+
+#main{
+  width: 100%;
+}
+
+#sidebar{
+  position: absolute;
+  top: 60px;
+  left: -100%;
+  bottom: 0;
+  z-index: 99;
+  width: 250px;
+  height: 100vh;
+  border-top: 2px solid #f5f5f5;
+  background-color: var(--belk-bg-dark);
+  transition: left .3s ease-out;
+}
+
+#sidebar.open{
+  left: 0;
+}
+
+#sidebar .navbar-brand,
+#sidebar .nav .nav-link{
+  color: var(--belk-main-color) !important;
+}
+
+#sidebar .navbar-brand > span{
+  display: inline-block;
+  color: var(--belk-bg-dark);
+  background-color: var(--belk-main-color);
+  /* padding: 18px 10px; */
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  margin-right: 10px;
+  line-height: 36px;
+}
+
+#sidebar .nav .nav-link{
+  transition: background-color .3s ease-in-out;
+}
+
+#sidebar .nav .nav-link:hover{
+  background-color: var(--belk-dark);
+}
+
+/**
+  * ===============================================
+  * END ADMIN DASHBOARD
+  * ===============================================
+ */
+
+
+/**
+  * ===============================================
+  * MEDIA QUERY
+  * ===============================================
+ */
+@media(min-width: 1200px){
+
+  #main{
+    width: calc(100% - 250px);
+    margin-left: auto;
+  }
+  #sidebar{
+    position: relative;
+    top: 0;
+    left: 0;
+    border-top: 0;
+    /* bottom: 0; */
+    /* z-index: 99; */
+    /* width: 250px;
+    height: 100vh; */
+    /* background-color: var(--belk-bg-dark); */
+    /* transition: left .3s ease-out; */
+  }
+}
+
+/**
+  * ===============================================
+  * END MEDIA QUERY
+  * ===============================================
+ */
