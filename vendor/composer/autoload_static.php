@@ -61,7 +61,7 @@ class ComposerStaticInitcdc540639fbf1cb4b940a9197d9773c3
     public static $prefixDirsPsr4 = array (
         'Utilities\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/utilities',
+            0 => __DIR__ . '/../..' . '/Utilities',
         ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
@@ -81,11 +81,11 @@ class ComposerStaticInitcdc540639fbf1cb4b940a9197d9773c3
         ),
         'Model\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/model',
+            0 => __DIR__ . '/../..' . '/Model',
         ),
         'Lang\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/lang',
+            0 => __DIR__ . '/../..' . '/Lang',
         ),
         'GrahamCampbell\\ResultType\\' => 
         array (
@@ -93,7 +93,7 @@ class ComposerStaticInitcdc540639fbf1cb4b940a9197d9773c3
         ),
         'Foundational\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/Foundational/src',
+            0 => __DIR__ . '/../..' . '/Foundational/Src',
         ),
         'Dotenv\\' => 
         array (
@@ -105,11 +105,11 @@ class ComposerStaticInitcdc540639fbf1cb4b940a9197d9773c3
         ),
         'Controller\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/controllers',
+            0 => __DIR__ . '/../..' . '/Controllers',
         ),
         'Admin\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/controllers/admin',
+            0 => __DIR__ . '/../..' . '/Controllers/Admin',
         ),
     );
 

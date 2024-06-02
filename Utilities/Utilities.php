@@ -15,7 +15,7 @@ class Utilities {
    */
   public static function assets(string $file_path) : string {
 
-    if(file_exists(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'public/assets' . DIRECTORY_SEPARATOR . $file_path)){
+    if(file_exists(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Public/assets' . DIRECTORY_SEPARATOR . $file_path)){
       return 'assets' . DIRECTORY_SEPARATOR . $file_path;
     }
     throw new \Exception('Assets File Not Found');

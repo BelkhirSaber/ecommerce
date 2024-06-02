@@ -17,15 +17,15 @@ $_SESSION['lang'] = $_ENV['DEFAULT_LANG'];
 
 //-- Racine
 
-define('RACINE', 'eCommerce');
+define('RACINE', 'ecommerce');
 
 //-- View Path
 
-define('VIEWS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'views');
+define('VIEWS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Views');
 
 //-- Image Path
 
-define('IMAGE_PATH', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . 'images');
+define('IMAGE_PATH', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Public' . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . 'images');
 
 //-- Database Config
 

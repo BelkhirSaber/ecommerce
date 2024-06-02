@@ -6,17 +6,17 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Utilities\\' => array($baseDir . '/utilities'),
+    'Utilities\\' => array($baseDir . '/Utilities'),
     'Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
     'PhpOption\\' => array($vendorDir . '/phpoption/phpoption/src/PhpOption'),
-    'Model\\' => array($baseDir . '/model'),
-    'Lang\\' => array($baseDir . '/lang'),
+    'Model\\' => array($baseDir . '/Model'),
+    'Lang\\' => array($baseDir . '/Lang'),
     'GrahamCampbell\\ResultType\\' => array($vendorDir . '/graham-campbell/result-type/src'),
-    'Foundational\\' => array($baseDir . '/Foundational/src'),
+    'Foundational\\' => array($baseDir . '/Foundational/Src'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
     'Database\\' => array($baseDir . '/Database'),
-    'Controller\\' => array($baseDir . '/controllers'),
-    'Admin\\' => array($baseDir . '/controllers/admin'),
+    'Controller\\' => array($baseDir . '/Controllers'),
+    'Admin\\' => array($baseDir . '/Controllers/Admin'),
 );

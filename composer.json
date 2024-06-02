@@ -5,13 +5,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Admin\\": "controllers/admin",
-            "Controller\\": "controllers/",
+            "Admin\\": "Controllers/Admin",
+            "Controller\\": "Controllers/",
             "Database\\": "Database/",
-            "Model\\": "model/",
-            "Lang\\": "lang/",
-            "Utilities\\": "utilities/",
-            "Foundational\\": "Foundational/src/"
+            "Model\\": "Model/",
+            "Lang\\": "Lang/",
+            "Utilities\\": "Utilities/",
+            "Foundational\\": "Foundational/Src/"
         }
     }
 }

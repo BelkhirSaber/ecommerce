@@ -5,6 +5,11 @@ use Controller\Auth\AuthController;
 use Controller\HomeController;
 use Foundational\Router\Router;
 
+Router::route('GET', '/test',  function() {
+  echo "test ok";
+});
+
+
 Router::route('GET', '/', function(){(new HomeController())->index(); });
 Router::route('GET', '/login', function(){ (new AuthController) ->login(); });
 
