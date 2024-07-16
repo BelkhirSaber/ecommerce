@@ -32,4 +32,4 @@ define('IMAGE_PATH', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Public' . DIRECTO
 define('HOST', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
-define('DB_NAME', 'belk_ecommerce');
+define('DB_NAME', 'b3s_store');

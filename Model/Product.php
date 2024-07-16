@@ -2,23 +2,24 @@
 
 /**
  * Author: Saber Belkhir
- * Date: 02-03-2024
+ * Date: 13-07-2024
  */
 
 namespace Model;
 
 use Foundational\Model\Model;
 
-class User extends Model
+class Product extends Model
 {
-  protected string $table = 't_b3s_user';
+  protected string $table = 't_b3s_product';
 
   public function __construct()
   {
     parent::__construct();
+  }
 
-    // echo "user extends model class";
-    // print_r($this->db);
+  public function all() {
+
     $statement = $this->db->prepare("SELECT * FROM $this->table");
     $statement->execute() or die($statement->errorInfo());
     while($row = $statement->fetchObject())
@@ -28,5 +29,6 @@ class User extends Model
       echo "</pre>";
     }
     $statement->closeCursor();
+
   }
 }

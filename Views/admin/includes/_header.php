@@ -1,9 +1,9 @@
 <!-- header -->
 <header>
   <nav class="navbar text-capitalize h-100">
-    <div class="container-fluid justify-content-between justify-content-md-around">
+    <div class="container justify-content-between px-5">
       <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-      <span id="openSidebar" class="me-3"><i class="fa-solid fa-bars fs-4"></i></span>
+      <span id="openSidebar" class="me-3 d-lg-none"><i class="fa-solid fa-bars fs-4"></i></span>
 
       <form class="d-md-flex d-none" role="search">
         <div class="input-group">
@@ -13,17 +13,19 @@
       </form>
 
       <div class="nav align-items-center justify-content-end">
-        <span class="nav-link nav-link-search d-md-none"><i class="fa-solid fa-magnifying-glass fs-4"></i></span>
+        <span class="nav-link nav-link-search d-md-none">
+          <e class="fa-solid fa-magnifying-glass fs-4 "></e>
+        </span>
 
         <div class="position-relative px-2">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <div class="position-relative d-inline-block">
-              <i class="fa-solid fa-message fs-4"></i>
+              <i class='bx bxs-comment-dots text-white'></i>
               <span class="position-absolute top-0 start-100 translate-middle p-1 rounded-circle bg-danger">
                 <span class="visually-hidden">unread messages</span>
               </span>
             </div>
-            <span class="ms-1 d-none d-md-inline">message</span>
+            <span class="ms-1 d-none d-md-inline text-white text-capitalize">message</span>
             
           </a>
           <ul class="dropdown-menu end-0">
@@ -37,12 +39,12 @@
         <div class="position-relative px-2">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <div class="position-relative d-inline-block">
-              <i class="fa-solid fa-bell fs-4"></i> 
+              <i class='bx bxs-bell text-white' ></i>
               <span class="position-absolute top-0 start-100 translate-middle p-1 rounded-circle bg-danger">
                 <span class="visually-hidden">unread notification</span>
               </span>
             </div>
-            <span class="ms-1 d-none d-md-inline">notification</span>
+            <span class="ms-1 d-none d-md-inline text-white text-capitalize">notification</span>
           </a>
           <ul class="dropdown-menu end-0">
             <li><a class="dropdown-item" href="#">Action notification</a></li>
@@ -53,9 +55,20 @@
         </div>
 
         <div class="position-relative">
-          <a class="nav-link dropdown-toggle position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="<?php echo $utility::assets('images/default/admin_dash/default_admin_user.png')?>" alt="user profile" width="28" height="28"><span class="ms-1 d-none d-md-inline" style="vertical-align: -webkit-baseline-middle;">profile</span>
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="position-relative d-inline-block">
+              <i class='bx bxs-user-circle text-white'></i>
+              <span>
+                <span class="visually-hidden">unread profile</span>
+              </span>
+            </div>
+            <span class="ms-1 d-none d-md-inline text-white text-capitalize">profile</span>
           </a>
+          <!-- <a class="nav-link dropdown-toggle position-relative text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> -->
+            <!-- <img src="<?php //echo $utility::assets('images/default/admin_dash/default_admin_user.png')?>" alt="user profile" width="28" height="28"> -->
+            <!-- <i class='bx bxs-user-circle text-white'></i>
+            <span class="ms-1 d-none d-md-inline" style="vertical-align: -webkit-baseline-middle;">profile</span>
+          </a> -->
           <ul class="dropdown-menu end-0">
             <li><a class="dropdown-item" href="#">Action profile</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>

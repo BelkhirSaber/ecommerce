@@ -13,11 +13,12 @@ abstract class Query
 
   public function __construct()
   {
-    $connection_result = DB::getInstance()->connection("mysql:host=localhost;dbname=store_belk", "root", "root");
+    // $dns = "mysql:host=".HOST.";dbname=".DB_NAME;
+    $connection_result = DB::getInstance()->connection('mysql:host=localhost;dbname=b3s_store', 'root', '');
     if($connection_result instanceof PDO)
       $this->db = $connection_result;
     else
-      return throw new PDOException($connection_result);
+      throw new PDOException($connection_result);
   }
 
   // Insert

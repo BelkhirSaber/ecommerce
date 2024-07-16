@@ -12,9 +12,11 @@ class AdminController extends Controller{
 
   public function index() {
 
+    $user = new User();
+
     // if ($this->authenticated()) {
       
-      $this->view('admin/dashboard');
+      $this->view('admin.dashboard', [], 'admin');
     // }
 
 

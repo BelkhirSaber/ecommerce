@@ -1,6 +1,7 @@
 <?php
 
 use Admin\AdminController;
+use Controller\ProductsController;
 use Controller\Auth\AuthController;
 use Controller\HomeController;
 use Foundational\Router\Router;
@@ -15,6 +16,7 @@ Router::route('GET', '/login', function(){ (new AuthController) ->login(); });
 
 // Admin dash route
 Router::route('GET', '/dashboard', function() { (new AdminController)->index(); });
+Router::route('GET', '/new-product', function() { (new ProductsController)->index(); });
 
 // Router::prefix('/testeur')->group(function(){
 //   Router::route('GET', '/one', function() {echo "one test"; });

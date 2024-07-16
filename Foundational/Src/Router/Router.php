@@ -117,10 +117,10 @@ class Router {
    * Create Group Route With Prefix
    * @param callable $callable
    */
-  public function group(callable $callable)
+  public static function group(string $prefix, callable $callable)
   {
     call_user_func($callable);
-    static::$instance->setPrefix('');
+    static::$instance->setPrefix($prefix);
   }
 
 }
