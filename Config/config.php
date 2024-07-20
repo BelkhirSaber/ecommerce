@@ -29,7 +29,7 @@ define('IMAGE_PATH', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Public' . DIRECTO
 
 //-- Database Config
 
-define('HOST', 'localhost');
+define('HOST', '127.0.0.1');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 define('DB_NAME', 'b3s_store');
