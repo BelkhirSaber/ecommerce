@@ -106,5 +106,3 @@ const loadPage = (e, url) => {
 
 
 
-// console.log(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
-

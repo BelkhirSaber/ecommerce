@@ -4,9 +4,12 @@ namespace Database;
 
 use PDO;
 use PDOException;
+use PDOStatement;
 
 abstract class Query
 {
+
+  // use \ArrayTrait;
 
   protected PDO $db;
   protected string $table;
@@ -26,10 +29,17 @@ abstract class Query
     // $this->db->prepare("INSERT INTO ". $this->table . "() VALUES()");
   }
 
-  // Update
-  public function update() {
-
-  }
+  // -- Update
+  public function update(array $columns)
+    {
+      // if(!$this->isAssociativeArray($columns)) return array('result' => 0, 'message' => 'you must pass an associative array in the '.__FUNCTION__.' function');
+      // $updatedColumns = "";
+      // foreach($columns as $key => $value) 
+      //   {
+      //     $updatedColumns .= '';
+      //   }
+      //       $query = 
+    }
 
   // Delete
   public function delete(){
@@ -50,4 +60,13 @@ abstract class Query
   public function find() {
 
   }
+
+  // -- Function Query
+  public function sql_query(string $query, array $params) : PDOStatement|bool
+    {
+      $statement = $this->db->prepare($query);
+      $result = $statement->execute($params);
+      if($result) return $statement;
+      return false;
+    }
 }

@@ -2,22 +2,34 @@
 
 :root{
   --belk-main-color: white;
-  --belk-primary: rgba(13, 110, 253, 1);
-  --belk-bg-primary: rgba(13, 110, 253, 0.11);
+  --belk-primary: #0d6efd;
+  --belk-bg-primary: #0d6efd1c;
   --belk-secondary: #6c7293;
   --belk-success: #00d25b;
-  --belk-bg-success: rgba(0, 210, 91, 0.11);
-  --belk-info: rgba(13, 202, 240, 1);
-  --belk-bg-info: rgba(13, 202, 240, 0.11);
   --belk-danger: #fc424a;
-  --belk-bg-danger: rgba(252, 66, 74, 0.11);
-  --belk-warning: rgba(255, 193, 7, 1);
-  --belk-bg-warning: rgba(255, 193, 7, 0.11);
-  --belk-bg-light: #f5f7fb;
   --belk-dark: #222e3c;
+  --belk-warning: #ffc107;
+  --belk-info: #0dcaf0;
+
+  --belk-gray-light: #eee;
+  --belk-success-20: #00d25b33;
+  --belk-heading-color: #414141;
+
+  --belk-bg-success: #00d15b1c;
+  --belk-bg-info: #0dcaf01c;
+  --belk-bg-danger: #fc424a1c;
+  --belk-bg-warning: #ffc1071c;
+  --belk-bg-light: #f5f7fb;
   --belk-bg-dark: #19222c;
   --belk-bg-light-gray: #f9faf3;
-  --belk-heading-color: #414141;
+  
+
+  /* Card & input bg */
+  --belk-bg-card: #F9F9F9;
+  --belk-bg-input: #EEEEEE;
+
+  /* Text color */
+  --belk-text-color: #252A2E;
 }
 
 *{
@@ -52,16 +64,14 @@ body{
 }
 
 header {
-  background-color: var(--belk-secondary);
+  background-color: var(--belk-main-color);
   position: sticky;
   top: 0;
   z-index: 2;
 }
 
 body{
-
-  background-color: var(--belk-bg-light-gray);
-
+  background-color: var(--belk-main-color);
 }
 
 /* Keyframes for opacity animation */
@@ -82,6 +92,21 @@ body{
     opacity: 0;
   }
 }
+
+/* CUSTOM CLASS */
+.card-custom-bg{
+  background-color: var(--belk-bg-card) !important;
+}
+
+.input-custom-bg{
+  background-color: var(--belk-bg-input) !important;
+}
+
+.text-custom-color{
+  color: var(--belk-text-color) !important;
+}
+/* END CUSTOM CLASS */
+
 
 /* Keyframes for width animation */
 @keyframes expand-in {
@@ -245,6 +270,36 @@ body{
   * ===============================================
  */
 
+#main .size .form-check{
+  padding-left: 0 !important;
+  margin: 0 !important;
+}
+
+#main .size .form-check .form-check-input{
+  display: none;
+}
+
+#main .size .form-check .form-check-label {
+  width: 35px;
+  text-align: center;
+  border-radius: 6px;
+  padding: .25rem;
+  background-color: var(--belk-gray-light);
+  transition: background-color .3s ease-out;
+}
+
+#main .size .form-check .form-check-label:hover{
+  background-color: var(--belk-success-20);
+}
+
+#main .size .form-check .form-check-input:checked~.form-check-label{
+  background-color: var(--belk-success);
+}
+
+#main .gender .form-check-input:checked{
+  background-color: var(--belk-success) !important;
+  border-color: var(--belk-success) !important;
+}
 
 /**
   * ===============================================
@@ -302,6 +357,7 @@ body{
     opacity: 0;
     width: 0;
     animation: fade-out .3s ease-in-out, expand-out .7s ease-in-out;
+    display: none !important;
   }
 
   #sidebar.reduce .nav .dropend .dropdown-toggle::after{

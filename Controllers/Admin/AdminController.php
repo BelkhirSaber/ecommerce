@@ -21,5 +21,9 @@ class AdminController extends Controller{
 
 
   }
+
+  public function test(string $status) {
+    echo $status;
+  }
   
 }

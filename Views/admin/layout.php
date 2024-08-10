@@ -39,7 +39,7 @@
       <?php include_once 'includes/_header.php';?>
 
       <!-- Container-Fluid -->
-      <div id="content" class="container pt-5 px-5 admin-content" style="height: 5000px;">
+      <div id="content" class="container-fluid pt-3 admin-content" style="height: 5000px;">
 
         <?php echo $content;?>
 

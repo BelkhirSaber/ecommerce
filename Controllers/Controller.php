@@ -9,6 +9,7 @@ use Utilities\Utilities;
 class Controller extends AuthMiddleware{
 
   public function view(string $path, ?array $params = null, ?string $layout = null){
+
     ob_start();
     // -- Define all variable in this section
 

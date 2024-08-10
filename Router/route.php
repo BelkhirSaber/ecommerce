@@ -1,14 +1,15 @@
 <?php
 
 use Admin\AdminController;
+use Admin\OptionsController;
 use Controller\ProductsController;
 use Controller\Auth\AuthController;
 use Controller\HomeController;
 use Foundational\Router\Router;
 
-Router::route('GET', '/test',  function() {
-  echo "test ok";
-});
+// Router::route('GET', '/test',  function() {
+//   echo "test ok";
+// });
 
 
 Router::route('GET', '/', function(){(new HomeController())->index(); });
@@ -17,6 +18,8 @@ Router::route('GET', '/login', function(){ (new AuthController) ->login(); });
 // Admin dash route
 Router::route('GET', '/dashboard', function() { (new AdminController)->index(); });
 Router::route('GET', '/new-product', function() { (new ProductsController)->index(); });
+
+// Router::route('', '/test/[a:status]', function($status) { (new AdminController)->test($status); });
 
 // Router::prefix('/testeur')->group(function(){
 //   Router::route('GET', '/one', function() {echo "one test"; });
@@ -29,6 +32,8 @@ Router::route('GET', '/new-product', function() { (new ProductsController)->inde
 //   Router::route('GET', '/one', function() {echo "one other"; });
 //   Router::route('GET', '/two', function() {echo "tow other"; });
 // });
+
+// Router::route('POST', '/sidebar-expand/[a:status]', function ($status) {(new OptionsController)->sidebar_expand($status);});
 
 // Resolve routes
 Router::resolve();

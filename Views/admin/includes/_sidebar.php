@@ -1,5 +1,16 @@
+<?php
+
+// use Model\Options;
+
+// $options = new Options();
+
+// $statement = $options->sql_query("SELECT * FROM t_b3s_options WHERE S_NAME_OPTION = :S_NAME_OPTION", array('S_NAME_OPTION' => 'sidebar_expand'));
+
+// if($statement != false)  $sidebarExpand = $statement->fetchObject();
+
+?>
 <!-- sidebar -->
-<section id="sidebar" class="py-3">
+<section id="sidebar" class="py-3 ">
   <div class="navbar-brand p-3 pt-0 d-flex flex-nowrap align-items-center">
     <div class="d-inline-block brand-left" >
       <i class='bx bx-md bx-infinite' style="vertical-align: bottom;"></i>
