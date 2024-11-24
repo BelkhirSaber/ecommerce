@@ -39,7 +39,7 @@
       <?php include_once 'includes/_header.php';?>
 
       <!-- Container-Fluid -->
-      <div id="content" class="container-fluid pt-3 admin-content" style="height: 5000px;">
+      <div id="content" class="container-fluid pt-3 admin-content" >
 
         <?php echo $content;?>
 
@@ -61,8 +61,12 @@
   <script src="<?php echo $utility::assets('fontawesome/js/all.min.js')?>"></script>
   <!-- Bootstrap JS -->
   <script src="<?php echo $utility::assets('js/bootstrap/bootstrap.bundle.min.js') ?>"></script>
-  <!-- Custom JS -->
+  <!-- Global Module -->
+  <script type="module" src="<?php echo $utility::assets('js/global_module.js')?>"></script>
+  <!-- Admin Sidebar JS -->
+  <script src="<?php echo $utility::assets('js/admin/sidebar.js') ?>"></script>
+  <!-- Admin Main JS -->
+  <script src="<?php echo $utility::assets('js/admin/main.js') ?>"></script>
+  <!-- Main JS -->
   <script src="<?php echo $utility::assets('js/main.js') ?>"></script>
-
-</body>
 </html>

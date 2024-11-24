@@ -1,5 +1,5 @@
 <!-- header -->
-<header class="">
+<header class="" style="border-bottom: 1px solid #ccc;">
   <nav class="navbar text-capitalize h-100">
     <div class="container-fluid justify-content-between">
       <!-- <a class="navbar-brand" href="#">Navbar</a> -->

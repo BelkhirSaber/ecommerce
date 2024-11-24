@@ -36,6 +36,7 @@ class Controller extends AuthMiddleware{
       echo $content;
       exit;
     }
+
     require VIEWS . DIRECTORY_SEPARATOR . (!is_null($layout) ? 'admin/layout.php' : 'layout.php');
   }
 

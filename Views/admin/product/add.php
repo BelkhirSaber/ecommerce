@@ -145,7 +145,8 @@
   <div class="col-md-12 col-lg-4">
     <div class="card card-custom-bg border-0">
       <div class="card-body">
-
+        <!-- Show images -->
+        <!-- Add Images -->
       </div>
     </div>
   </div>

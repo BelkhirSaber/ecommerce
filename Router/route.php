@@ -3,6 +3,7 @@
 use Admin\AdminController;
 use Admin\OptionsController;
 use Controller\ProductsController;
+use Controller\SettingsController;
 use Controller\Auth\AuthController;
 use Controller\HomeController;
 use Foundational\Router\Router;
@@ -18,6 +19,7 @@ Router::route('GET', '/login', function(){ (new AuthController) ->login(); });
 // Admin dash route
 Router::route('GET', '/dashboard', function() { (new AdminController)->index(); });
 Router::route('GET', '/new-product', function() { (new ProductsController)->index(); });
+Router::route('GET', '/settings', function() { (new SettingsController)->index(); });
 
 // Router::route('', '/test/[a:status]', function($status) { (new AdminController)->test($status); });
 

@@ -23,7 +23,7 @@
   <!-- Links -->
   <ul class="nav flex-column px-3">
     <li class="nav-item mb-1">
-      <a href="/dashboard" onclick="loadPage(event, '/dashboard')" class="nav-link p-2 d-flex align-items-center">
+      <a href="/dashboard" class="nav-link p-2 d-flex align-items-center">
         <i class='bx bxs-dashboard px-2'></i>
         <span class="d-inline-block">Dashboard</span></a>
     </li>
@@ -44,7 +44,7 @@
         <i class='bx bxs-purchase-tag px-2'></i>
         <span class="d-inline-block">Products</span></a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="/new-product" onclick="loadPage(event, '/new-product')">New Product</a></li>
+          <li><a class="dropdown-item" href="/new-product">New Product</a></li>
           <li><a class="dropdown-item" href="#">List Product</a></li>
           <li><a class="dropdown-item" href="#">New Category</a></li>
       </ul>
@@ -75,7 +75,7 @@
         <span class="d-inline-block">Support</span></a>
     </li>
     <li class="nav-item mb-1">
-      <a href="#" class="nav-link p-2 d-flex align-items-center">
+      <a href="/settings" class="nav-link p-2 d-flex align-items-center">
         <i class='bx bxs-cog px-2' ></i>
         <span class="d-inline-block">Settings</span></a>
     </li>

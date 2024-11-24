@@ -42,7 +42,7 @@ a{
 }
 
 body{
-  overflow-y:scroll;
+  /* overflow-y:scroll; */
 }
 
 #progress-container {
