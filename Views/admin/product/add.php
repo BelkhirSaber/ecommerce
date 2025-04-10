@@ -9,7 +9,7 @@
 
   <!-- Info product -->
   <div class="col-md-12 col-lg-8">
-    <form action="" method="post">
+    <form action="" method="post" id="insert-product">
       <!-- General Info -->
       <div class="card border-0 card-custom-bg mb-3">
         <div class="card-body">
@@ -145,8 +145,17 @@
   <div class="col-md-12 col-lg-4">
     <div class="card card-custom-bg border-0">
       <div class="card-body">
+
         <!-- Show images -->
+        <h1>Upload Product Images</h1>
+        <div class="main-preview" id="mainPreview">
+            <p>No image selected</p>
+        </div>
+
         <!-- Add Images -->
+        <div class="image-list" id="imageList">
+          <input type="file" id="imageInput" multiple accept="image/*">
+        </div>
       </div>
     </div>
   </div>

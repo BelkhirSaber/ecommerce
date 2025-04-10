@@ -16,8 +16,9 @@ abstract class Query
 
   public function __construct()
   {
-    $dns = "mysql:host=".HOST.";dbname=".DB_NAME;
-    $connection_result = DB::getInstance()->connection($dns, DB_USERNAME, DB_PASSWORD);
+    // $dns = "mysql:host=".HOST.";dbname=".DB_NAME;
+    $dns = "mysql:host=".$_ENV["DB_HOST"].";dbname=".$_ENV["DB_DATABASE"];
+    $connection_result = DB::getInstance()->connection($dns, $_ENV["DB_USERNAME"], $_ENV["DB_PASSWORD"]);
     if($connection_result instanceof PDO)
       $this->db = $connection_result;
     else

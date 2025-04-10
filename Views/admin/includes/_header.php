@@ -1,11 +1,11 @@
 <!-- header -->
-<header class="" style="border-bottom: 1px solid #ccc;">
+<header class="p-3 pb-md-5 position-relative" style="border-bottom: 1px solid #ccc; background-color: #03d79a;">
   <nav class="navbar text-capitalize h-100">
     <div class="container-fluid justify-content-between">
       <!-- <a class="navbar-brand" href="#">Navbar</a> -->
       <span id="openSidebar" class="me-3 d-lg-none"><i class="fa-solid fa-bars fs-4"></i></span>
 
-      <form class="d-md-flex d-none" role="search">
+      <form class="d-md-flex d-none form-search" role="search">
         <div class="input-group">
           <input class="form-control" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
@@ -81,6 +81,46 @@
 
     </div>
   </nav>
+
+  <div class="d-flex justify-content-center flex-column row-gap-3 row-gap-md-0 column-gap-md-3 flex-md-row header-stats">
+
+    <div class="card flex">
+      <div class="card-header">
+        <h5 class="card-title m-0" style="font-size: 1rem;">New Order</h3>
+      </div>
+      <div class="card-body">
+          <div class="info d-flex align-items-center gap-3">
+            <i class="fa-solid fa-box fs-1"></i>
+            <span class="fs-1 fw-bold">125</span>
+          </div>
+      </div>
+    </div>
+
+    <div class="card flex">
+      <div class="card-header">
+        <h5 class="card-title m-0" style="font-size: 1rem;">Pending order</h3>
+      </div>
+      <div class="card-body">
+          <div class="info d-flex align-items-center gap-3">
+            <i class="fa-solid fa-boxes-stacked fs-1"></i>
+            <span class="fs-1 fw-bold">320</span>
+          </div>
+      </div>
+    </div>
+
+    <div class="card flex">
+      <div class="card-header">
+        <h5 class="card-title m-0" style="font-size: 1rem;">Total</h3>
+      </div>
+      <div class="card-body">
+          <div class="info d-flex align-items-center gap-3">
+            <i class="fa-solid fa-hashtag fs-1"></i>
+            <span class="fs-1 fw-bold"><?php echo number_format(10201, 2); ?></span>
+          </div>
+      </div>
+    </div>
+
+    </div>
 </header>
 <!-- ./header -->
 

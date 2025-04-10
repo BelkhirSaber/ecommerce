@@ -70,6 +70,14 @@ header {
   z-index: 2;
 }
 
+header .form-search {
+  flex: 1;
+}
+
+header .header-stats .card{
+  flex: 1;
+}
+
 body{
   background-color: var(--belk-main-color);
 }
@@ -307,6 +315,22 @@ body{
   * ===============================================
  */
 
+@media(min-width: 768px){
+
+  header{
+    margin-bottom: 100px;
+    min-height: 160px;
+  }
+  header .header-stats {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    padding: 0 2rem;
+  }
+}
+
 @media(min-width: 992px) {
 
   .wrapper-content{
@@ -377,3 +401,27 @@ body{
   * END MEDIA QUERY
   * ===============================================
  */
+
+ .main-preview {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.main-preview img {
+  max-width: 400px;
+  border: 2px solid #333;
+  border-radius: 10px;
+}
+.image-list {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.image-list img {
+  max-width: 100px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

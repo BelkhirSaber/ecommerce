@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="<?php echo $utility::assets('css/bootstrap/bootstrap.min.css')?>">
   <!-- boxicons -->
   <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css">
+  <!-- upload image plugin -->
+  <link rel="stylesheet" href="<?php echo $utility::assets('plugin/ajax-file-uploader/css/jquery.uploader.css"')?>">
   <!-- Custom Css -->
   <link rel="stylesheet" href="<?php echo $utility::assets('css/main.css')?>">
 </head>
@@ -67,6 +69,8 @@
   <script src="<?php echo $utility::assets('js/admin/sidebar.js') ?>"></script>
   <!-- Admin Main JS -->
   <script src="<?php echo $utility::assets('js/admin/main.js') ?>"></script>
+  <!-- upload image plugin -->
+  <script src="<?php echo $utility::assets('plugin/ajax-file-uploader/dist/jquery.uploader.min.js') ?>"></script>
   <!-- Main JS -->
   <script src="<?php echo $utility::assets('js/main.js') ?>"></script>
 </html>
