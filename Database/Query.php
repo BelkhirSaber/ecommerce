@@ -8,66 +8,108 @@ use PDOStatement;
 
 abstract class Query
 {
-
-  // use \ArrayTrait;
-
   protected PDO $db;
   protected string $table;
 
   public function __construct()
   {
-    // $dns = "mysql:host=".HOST.";dbname=".DB_NAME;
-    $dns = "mysql:host=".$_ENV["DB_HOST"].";dbname=".$_ENV["DB_DATABASE"];
-    $connection_result = DB::getInstance()->connection($dns, $_ENV["DB_USERNAME"], $_ENV["DB_PASSWORD"]);
-    if($connection_result instanceof PDO)
+    $dsn = "mysql:host={$_ENV["DB_HOST"]};dbname={$_ENV["DB_DATABASE"]};charset=utf8mb4";
+    $connection_result = DB::getInstance()->connection($dsn, $_ENV["DB_USERNAME"], $_ENV["DB_PASSWORD"]);
+
+    if ($connection_result instanceof PDO) {
       $this->db = $connection_result;
-    else
+    } else {
       throw new PDOException($connection_result);
+    }
   }
 
-  // Insert
-  public function insert(){
-    // $this->db->prepare("INSERT INTO ". $this->table . "() VALUES()");
+  /**
+   * Insère une ligne dans la table.
+   */
+  public function insert(array $data): bool
+  {
+    $columns = implode(', ', array_keys($data));
+    $placeholders = ':' . implode(', :', array_keys($data));
+
+    $sql = "INSERT INTO {$this->table} ($columns) VALUES ($placeholders)";
+    $stmt = $this->db->prepare($sql);
+    return $stmt->execute($data);
   }
 
-  // -- Update
-  public function update(array $columns)
-    {
-      // if(!$this->isAssociativeArray($columns)) return array('result' => 0, 'message' => 'you must pass an associative array in the '.__FUNCTION__.' function');
-      // $updatedColumns = "";
-      // foreach($columns as $key => $value) 
-      //   {
-      //     $updatedColumns .= '';
-      //   }
-      //       $query = 
+  /**
+   * Met à jour une ou plusieurs colonnes par ID.
+   */
+  public function update(int $id, array $data): bool
+  {
+    $sets = [];
+    foreach ($data as $key => $value) {
+      $sets[] = "$key = :$key";
     }
 
-  // Delete
-  public function delete(){
+    $setClause = implode(', ', $sets);
+    $sql = "UPDATE {$this->table} SET $setClause WHERE id = :id";
+    $data['id'] = $id;
 
+    $stmt = $this->db->prepare($sql);
+    return $stmt->execute($data);
   }
 
-  // Find all
-  public function findAll() {
-    echo "find all query method";
+  /**
+   * Supprime une ligne par ID.
+   */
+  public function delete(int $id): bool
+  {
+    $sql = "DELETE FROM {$this->table} WHERE id = :id";
+    $stmt = $this->db->prepare($sql);
+    return $stmt->execute(['id' => $id]);
   }
 
-  // Find one
-  public function findOne(){
-
+  /**
+   * Récupère toutes les lignes de la table.
+   */
+  public function findAll(): array
+  {
+    $sql = "SELECT * FROM {$this->table}";
+    $stmt = $this->db->query($sql);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  // Find with filter
-  public function find() {
-
+  /**
+   * Récupère une ligne par ID.
+   */
+  public function findOne(int $id): ?array
+  {
+    $sql = "SELECT * FROM {$this->table} WHERE id = :id LIMIT 1";
+    $stmt = $this->db->prepare($sql);
+    $stmt->execute(['id' => $id]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result ?: null;
   }
 
-  // -- Function Query
-  public function sql_query(string $query, array $params) : PDOStatement|bool
-    {
-      $statement = $this->db->prepare($query);
-      $result = $statement->execute($params);
-      if($result) return $statement;
-      return false;
+  /**
+   * Recherche avec filtre dynamique.
+   */
+  public function find(array $filters): array
+  {
+    $conditions = [];
+    foreach ($filters as $key => $value) {
+      $conditions[] = "$key = :$key";
     }
+
+    $whereClause = implode(' AND ', $conditions);
+    $sql = "SELECT * FROM {$this->table} WHERE $whereClause";
+    $stmt = $this->db->prepare($sql);
+    $stmt->execute($filters);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  /**
+   * Exécute une requête SQL personnalisée avec paramètres.
+   */
+  public function sql_query(string $query, array $params = []): PDOStatement|bool
+  {
+    $stmt = $this->db->prepare($query);
+    $result = $stmt->execute($params);
+    return $result ? $stmt : false;
+  }
 }

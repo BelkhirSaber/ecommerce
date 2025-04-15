@@ -264,12 +264,6 @@ body{
   z-index: 9;
 }
 
-/* product */
-
-.admin-content .add-product .heading-title{
-  color: var(--belk-heading-color);
-}
-
 /* ===== End Sidebar ===== */
 
 /**
@@ -401,27 +395,3 @@ body{
   * END MEDIA QUERY
   * ===============================================
  */
-
- .main-preview {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.main-preview img {
-  max-width: 400px;
-  border: 2px solid #333;
-  border-radius: 10px;
-}
-.image-list {
-  display: flex;
-  overflow-x: auto;
-  gap: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-.image-list img {
-  max-width: 100px;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}

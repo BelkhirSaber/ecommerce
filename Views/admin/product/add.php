@@ -1,20 +1,26 @@
+<!-- Styles -->
+<link rel="stylesheet" href="<?php echo $utility::assets('css/product/styles.css')?>">
+<!-- Scripts -->
+<script src="<?php echo $utility::assets('js/product/main.js') ?>"></script>
+
+<!-- Page content -->
 <div class="row add-product">
 
   <div class="col-12 d-flex justify-content-between pb-3">
     <h4 class="text-custom-color"><i class='bx bxs-purchase-tag bx-sm px-2'></i>Add New Product</h4>
     <div class="">
-      <button class="btn btn-primary rounded-5" type="button">Save</button>
+      <button class="btn btn-primary rounded-5" type="button" form="product" onclick="addProduct(event, this)">Save</button>
     </div>
   </div>
 
   <!-- Info product -->
   <div class="col-md-12 col-lg-8">
-    <form action="" method="post" id="insert-product">
+    <form action="" method="post" id="product">
       <!-- General Info -->
       <div class="card border-0 card-custom-bg mb-3">
         <div class="card-body">
           <h5 class="card-title text-custom-color">General Information</h5>
-          
+
           <div class="mb-3">
             <label for="productSlug" class="form-label">Slug</label>
             <input type="text" class="form-control input-custom-bg py-3 border-0" id="productSlug" placeholder="t-shirt-ref-0021">
@@ -147,15 +153,17 @@
       <div class="card-body">
 
         <!-- Show images -->
-        <h1>Upload Product Images</h1>
+        <h5>Upload Product Images</h5>
         <div class="main-preview" id="mainPreview">
-            <p>No image selected</p>
         </div>
 
         <!-- Add Images -->
         <div class="image-list" id="imageList">
-          <input type="file" id="imageInput" multiple accept="image/*">
+          <label class="file-input-wrapper" for="imageInput">
+            <i class="fa-regular fa-image"></i>
+          </label>
         </div>
+        <input type="file" id="imageInput" multiple accept="image/*" form="product">
       </div>
     </div>
   </div>

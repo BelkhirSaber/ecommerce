@@ -20,7 +20,10 @@ class ProductsController extends Controller {
     // $stmt->execute();
     // var_dump($stmt->fetchAll(\PDO::FETCH_ASSOC));
 
-    $this->view('admin.product.add', [],'admin');
+    $product = new Product();
+    $allProduct = $product->all();
+
+    $this->view('admin.product.add', compact("allProduct"), 'admin');
 
   }
 

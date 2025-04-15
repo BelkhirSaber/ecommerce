@@ -7,6 +7,8 @@
 
 namespace Model;
 
+use PDO;
+use PDOException;
 use Foundational\Model\Model;
 
 class Product extends Model
@@ -18,17 +20,10 @@ class Product extends Model
     parent::__construct();
   }
 
+  // -- Get all product
+
   public function all() {
-
-    $statement = $this->db->prepare("SELECT * FROM $this->table");
-    $statement->execute() or die($statement->errorInfo());
-    while($row = $statement->fetchObject())
-    {
-      echo "<pre>";
-      print_r($row);
-      echo "</pre>";
-    }
-    $statement->closeCursor();
-
+    return $this->findAll();
   }
+
 }
