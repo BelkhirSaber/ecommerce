@@ -41,7 +41,7 @@
       <?php include_once 'includes/_header.php';?>
 
       <!-- Container-Fluid -->
-      <div id="content" class="container-fluid pt-3 admin-content" >
+      <div id="content" class="container-fluid container-xxl pt-3 admin-content" >
 
         <?php echo $content;?>
 

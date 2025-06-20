@@ -1,68 +1,34 @@
 <?php
 
-use Admin\AdminController;
-use Admin\OptionsController;
-use Controller\ProductsController;
-use Controller\SettingsController;
-use Controller\Auth\AuthController;
-use Controller\HomeController;
 use Foundational\Router\Router;
 
-// Router::route('GET', '/test',  function() {
-//   echo "test ok";
+Router::addMiddleware(function($request, $next) {
+    error_log("Requête : " . $request->getMethod() . " " . $request->getUri()->getPath());
+    return $next($request);
+});
+
+Router::get('/', 'HomeController:index')->setName('home.index');
+Router::get('/dashboard', '\Admin\AdminController:index')->setName('admin.index');
+
+// Router::get('/test/convertczk', 'ControllerOrder:GetPriceAndConvertToCzk')
+//     ->setName('GetPriceAndConvertToCzk');
+
+// Router::get('/', function($request, $responseFactory) {
+//     $response = $responseFactory->createResponse(200);
+//     $response->getBody()->write('Bienvenue à la page d\'accueil');
+//     return $response;
+// })->setName('home');
+
+// Router::group('/admin', function() {
+//     Router::get('/dashboard', function($request, $responseFactory) {
+//         $response = $responseFactory->createResponse(200);
+//         $response->getBody()->write('Admin Dashboard');
+//         return $response;
+//     })->setName('admin.dashboard');
 // });
 
-
-Router::route('GET', '/', function(){(new HomeController())->index(); });
-Router::route('GET', '/login', function(){ (new AuthController) ->login(); });
-
-// Admin dash route
-Router::route('GET', '/dashboard', function() { (new AdminController)->index(); });
-Router::route('GET', '/new-product', function() { (new ProductsController)->index(); });
-Router::route('GET', '/settings', function() { (new SettingsController)->index(); });
-
-// Router::route('', '/test/[a:status]', function($status) { (new AdminController)->test($status); });
-
-// Router::prefix('/testeur')->group(function(){
-//   Router::route('GET', '/one', function() {echo "one test"; });
-//   Router::route('GET', '/two', function() {echo "tow test"; });
-// });
-
-// Router::route('POST', '/hello', function() { echo "hello"; });
-
-// Router::prefix('/other')->group(function(){
-//   Router::route('GET', '/one', function() {echo "one other"; });
-//   Router::route('GET', '/two', function() {echo "tow other"; });
-// });
-
-// Router::route('POST', '/sidebar-expand/[a:status]', function ($status) {(new OptionsController)->sidebar_expand($status);});
-
-// Resolve routes
 Router::resolve();
 
-
-
-// $router = new AltoRouter();
-// // $router->setBasePath("/ecommerce");
-
-// // Front route
-// $router->map('GET', '/', function(){(new HomeController())->index(); });
-
-// // Auth route
-// $router->map('GET', '/login', function(){ (new AuthController) ->login(); });
-
-
-// // Admin dash route
-// $router->map('GET', '/dash', function() { (new AdminController)->index(); });
-
-
-// // return the current url match
-// $match = $router->match();
-
-// // call closure or throw 404 status
-// if( is_array($match) && is_callable( $match['target'] ) ) {
-// 	call_user_func_array($match['target'], $match['params']);
-// } else {
-// 	// no route was matched
-// 	header("HTTP/1.1 404 Not Found");
-// }
+// // Générer URL dans le code :
+// $url = Router::url('GetPriceAndConvertToCzk', ['id' => 123]);
+// echo "URL générée pour route : $url";

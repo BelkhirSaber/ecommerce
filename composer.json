@@ -1,7 +1,10 @@
 {
     "require": {
         "altorouter/altorouter": "^2.0",
-        "vlucas/phpdotenv": "^5.6"
+        "vlucas/phpdotenv": "^5.6",
+        "nyholm/psr7": "^1.8",
+        "nyholm/psr7-server": "^1.1",
+        "psr/http-message": "^2.0"
     },
     "autoload": {
         "psr-4": {

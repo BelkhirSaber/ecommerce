@@ -23,15 +23,15 @@
 
           <div class="mb-3">
             <label for="productSlug" class="form-label">Slug</label>
-            <input type="text" class="form-control input-custom-bg py-3 border-0" id="productSlug" placeholder="t-shirt-ref-0021">
+            <input type="text" name="slug" class="form-control input-custom-bg py-3 border-0" id="productSlug" placeholder="t-shirt-ref-0021">
           </div>
           <div class="mb-3">
-            <label for="productSlug" class="form-label">Name Product</label>
-            <input type="text" class="form-control input-custom-bg py-3 border-0" id="productSlug" placeholder="t-shirt black">
+            <label for="productName" class="form-label">Name Product</label>
+            <input type="text" name="name" class="form-control input-custom-bg py-3 border-0" id="productName" placeholder="t-shirt black">
           </div>
           <div class="mb-3">
             <label for="productDesc" class="form-label">Description</label>
-            <textarea class="form-control input-custom-bg py-3 border-0" id="productDesc" rows="3" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam eaque consequuntur qui praesentium facere atque amet beatae similique consequatur, nam quae corporis iure, cupiditate dolorum illum, iste nulla nostrum veritatis."></textarea>
+            <textarea name="description" class="form-control input-custom-bg py-3 border-0" id="productDesc" rows="3" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam eaque consequuntur qui praesentium facere atque amet beatae similique consequatur, nam quae corporis iure, cupiditate dolorum illum, iste nulla nostrum veritatis."></textarea>
           </div>
           <div class="mb-3 d-flex column-gap-5 flex-wrap">
             <!-- Size -->
@@ -41,32 +41,32 @@
               <div class="size d-flex gap-2 mt-2">
 
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" id="sizeXS" value="xs">
+                  <input class="form-check-input" type="checkbox" id="sizeXS" name="size" value="xs">
                   <label class="form-check-label" for="sizeXS">XS</label>
                 </div>
 
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" id="sizeS" value="s">
+                  <input class="form-check-input" type="checkbox" id="sizeS" name="size" value="s">
                   <label class="form-check-label" for="sizeS">S</label>
                 </div>
 
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" id="sizeM" value="M">
+                  <input class="form-check-input" type="checkbox" id="sizeM" name="size" value="M">
                   <label class="form-check-label" for="sizeM">M</label>
                 </div>
 
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" id="sizeXL" value="XL">
+                  <input class="form-check-input" type="checkbox" id="sizeXL" name="size" value="XL">
                   <label class="form-check-label" for="sizeXL">XL</label>
                 </div>
 
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" id="sizeXXL" value="XXL">
+                  <input class="form-check-input" type="checkbox" id="sizeXXL" name="size" value="XXL">
                   <label class="form-check-label" for="sizeXXL">XXL</label>
                 </div>
 
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" id="sizeStandard" value="STANDARD">
+                  <input class="form-check-input" type="checkbox" id="sizeStandard" name="size" value="STANDARD">
                   <label class="form-check-label" for="sizeStandard">NO</label>
                 </div>
 
@@ -112,12 +112,12 @@
               <label for="productSlug" class="form-label">Base Price</label>
               <div class="input-group">
                 <span class="input-group-text" id="basic-addon1">DT</span>
-                <input type="text" class="form-control input-custom-bg py-3 border-0" id="productSlug" placeholder="00.0">
+                <input type="text" name="base_price" class="form-control input-custom-bg py-3 border-0" id="productBasePrice" placeholder="00.0">
               </div>
             </div>
             <div class="mb-3 col-md-6">
               <label for="productSlug" class="form-label">Stock</label>
-              <input type="text" class="form-control input-custom-bg py-3 border-0" id="productSlug" placeholder="100">
+              <input type="text" name="stock" class="form-control input-custom-bg py-3 border-0" id="productStock" placeholder="100">
             </div>
           </div>
 
@@ -126,13 +126,13 @@
               <label for="productSlug" class="form-label">Discount</label>
               <div class="input-group">
                 <span class="input-group-text">&percnt;</span>
-                <input type="text" class="form-control input-custom-bg py-3 border-0" id="productSlug" placeholder="100">
+                <input type="text" name="discount" class="form-control input-custom-bg py-3 border-0" id="productDiscount" placeholder="100">
               </div>
             </div>
 
             <div class="mb-3 col-md-6">
               <label for="productSlug" class="form-label">Discount Category</label>
-              <select class="form-select input-custom-bg py-3 border-0" aria-label="Category of discount">
+              <select class="form-select input-custom-bg py-3 border-0" aria-label="Category of discount" name="discount_category">
                 <option selected>None</option>
                 <option value="1">New Year Discount</option>
               </select>
@@ -163,7 +163,7 @@
             <i class="fa-regular fa-image"></i>
           </label>
         </div>
-        <input type="file" id="imageInput" multiple accept="image/*" form="product">
+        <input type="file" name="images[]" id="imageInput" multiple accept="image/*" form="product">
       </div>
     </div>
   </div>
