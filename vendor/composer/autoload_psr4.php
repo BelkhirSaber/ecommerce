@@ -18,6 +18,7 @@ return array(
     'Lang\\' => array($baseDir . '/Lang'),
     'GrahamCampbell\\ResultType\\' => array($vendorDir . '/graham-campbell/result-type/src'),
     'Foundational\\' => array($baseDir . '/Foundational/Src'),
+    'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
     'Database\\' => array($baseDir . '/Database'),
     'Controller\\' => array($baseDir . '/Controllers'),

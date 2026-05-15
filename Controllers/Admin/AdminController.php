@@ -2,28 +2,15 @@
 
 namespace Admin;
 
-use Controller\Controller;
+use Controller\BaseController;
 use Model\User;
 
 // use Controller\Middleware\AuthMiddleware;
 
-class AdminController extends Controller{
-
+class AdminController extends BaseController{
 
   public function index() {
-
-    $user = new User();
-
-    // if ($this->authenticated()) {
-      
-      $this->view('admin.dashboard', [], 'admin');
-    // }
-
-
-  }
-
-  public function test(string $status) {
-    echo $status;
+    $this->view('dashboard', ['pageTitle' => 'Dashboard']);
   }
   
 }

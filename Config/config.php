@@ -22,6 +22,9 @@ $_SESSION['lang'] = $_ENV['DEFAULT_LANG'];
 
 define('RACINE', 'ecommerce');
 
+// -- Assets
+define('ASSETS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Public' . DIRECTORY_SEPARATOR . 'assets' );
+
 //-- View Path
 
 define('VIEWS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Views');
