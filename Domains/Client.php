@@ -2,15 +2,15 @@
 
 namespace Domains;
 
-class Client extends Base {
+use Model\User;
+use Carbon\Carbon;
 
-    // -- Get total number of clients in last 30 days
+class Client {
 
-    public function getTotalClients() {
-        $stmt = $this->pdo->prepare("SELECT COUNT(*) AS total FROM t_b3s_clients WHERE created_at >= DATE_SUB(CURDATE(), INTERVAL :days DAY");
-        $stmt->bindValue(':days', 30, \PDO::PARAM_INT);
-        $stmt->execute();
-        return $stmt->fetch()['total'];
+    public function getTotalClients()
+    {
+        return User::where('E_ROLE', 'customer')
+            ->where('CREATED_AT', '>=', Carbon::now()->subDays(30))
+            ->count();
     }
-
 }

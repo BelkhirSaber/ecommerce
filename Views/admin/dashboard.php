@@ -3,8 +3,23 @@
     <div class="col-lg-3 col-6">
         <div class="small-box bg-info">
             <div class="inner">
-                <h3><?= $totalOrders ?? 0 ?></h3>
-                <p>Commandes</p>
+                <h3><?= $orders_today ?? 0 ?></h3>
+                <p>Commandes aujourd'hui</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+            <a href="/<?= RACINE ?>/admin/orders" class="small-box-footer">
+                Plus d'infos <i class="fas fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-danger">
+            <div class="inner">
+                <h3><?= $orders_month ?? 0 ?></h3>
+                <p>Commandes ce mois</p>
             </div>
             <div class="icon">
                 <i class="fas fa-shopping-cart"></i>
@@ -18,7 +33,7 @@
     <div class="col-lg-3 col-6">
         <div class="small-box bg-success">
             <div class="inner">
-                <h3><?= number_format($totalRevenue ?? 0, 2) ?> €</h3>
+                <h3><?= number_format($total_revenue ?? 0, 2) ?> <?= $currency ?? '€' ?></h3>
                 <p>Chiffre d'affaires</p>
             </div>
             <div class="icon">
@@ -33,7 +48,7 @@
     <div class="col-lg-3 col-6">
         <div class="small-box bg-warning">
             <div class="inner">
-                <h3><?= $totalCustomers ?? 0 ?></h3>
+                <h3><?= $total_client ?? 0 ?></h3>
                 <p>Clients</p>
             </div>
             <div class="icon">
@@ -45,19 +60,22 @@
         </div>
     </div>
 
-    <div class="col-lg-3 col-6">
-        <div class="small-box bg-danger">
-            <div class="inner">
-                <h3><?= $totalProducts ?? 0 ?></h3>
-                <p>Produits</p>
-            </div>
-            <div class="icon">
-                <i class="fas fa-box"></i>
-            </div>
-            <a href="/<?= RACINE ?>/admin/products" class="small-box-footer">
-                Plus d'infos <i class="fas fa-arrow-circle-right"></i>
-            </a>
-        </div>
+</div>
+
+<!-- datatable last 10 orders -->
+
+<div class="row">
+    <div class="col-md-12">
+        <table id="admin-dashboard" class="display">
+            <thead>
+                <tr>
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
     </div>
 </div>
 

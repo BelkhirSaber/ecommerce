@@ -5,7 +5,8 @@
         "nyholm/psr7": "^1.8",
         "nyholm/psr7-server": "^1.1",
         "psr/http-message": "^2.0",
-        "nikic/fast-route": "^1.3"
+        "nikic/fast-route": "^1.3",
+        "illuminate/database": "^12.62"
     },
     "autoload": {
         "psr-4": {
@@ -18,5 +19,8 @@
             "Foundational\\": "Foundational/Src/",
             "Domains\\": "Domains/"
         }
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.24"
     }
 }

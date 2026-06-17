@@ -2,48 +2,28 @@
 
 namespace Domains;
 
-class Order extends Base {
+use Model\Order as OrderModel;
+use Carbon\Carbon;
 
+class Order {
 
-    // -- Get number of orders today
-
-    public function getNbOrderToday() {
-        
-        return $this->getNbOrder(1);
+    public function getNbOrderToday()
+    {
+        return OrderModel::today()->count();
     }
 
-    // -- Get number of orders in the last 30 days
-
-    public function getNbOrderLast30Days() {
-
-        return $this->getNbOrder(30);
+    public function getNbOrder($days = 30)
+    {
+        if ($days) {
+            return OrderModel::where('CREATED_AT', '>=', Carbon::now()->subDays($days))->count();
+        }
+        return OrderModel::count();
     }
 
-    // -- Get number of orders
-
-    public function getNbOrder($days = null) {
-
-        $sql = "SELECT COUNT(*) AS total FROM orders";
-
-        if ($days) 
-            $sql .= " WHERE created_at >= DATE_SUB(CURDATE(), INTERVAL :days DAY)";
-
-        $stmt = $this->pdo->prepare($sql);
-
-        if ($days)
-            $stmt->bindValue(':days', $days, \PDO::PARAM_INT);
-
-        $stmt->execute();
-        return $stmt->fetch()['total'];
+    public function getRevenueLast30Days()
+    {
+        return OrderModel::last30Days()
+            ->where('STATUS', 'delivered')
+            ->sum('TOTAL_AMOUNT');
     }
-
-    // -- Get total revenue in the last 30 days
-
-    public function getRevenueLast30Days() {
-        $stmt = $this->pdo->prepare("SELECT SUM(total_amount) AS revenue FROM orders WHERE status = 'completed' AND created_at >= DATE_SUB(CURDATE(), INTERVAL :days DAY)");
-        $stmt->bindValue(':days', 30, \PDO::PARAM_INT);
-        $stmt->execute();
-        return $stmt->fetch()['revenue'];
-    }
-
 }

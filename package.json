@@ -1,0 +1,19 @@
+{
+  "name": "b3s-ecommerce",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "bootstrap": "^4.6.2",
+    "datatables.net": "^2.3.8",
+    "datatables.net-dt": "^2.3.8",
+    "admin-lte": "^3.2.0",
+    "@popperjs/core": "^2.11.8"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

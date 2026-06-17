@@ -1,17 +1,19 @@
 <?php
 namespace Admin;
 
+use Domains\Dashboard;
+
 class DashboardController extends AdminBaseController {
     
     public function index() {
-        // Statistiques pour le dashboard
-        $data = [
-            'pageTitle' => 'Dashboard Admin',
-            'totalOrders' => 150,
-            'totalRevenue' => 45000,
-            'totalCustomers' => 320,
-            'totalProducts' => 85
-        ];
+
+        $dash = new Dashboard();
+
+        $data = $dash->getStatistics();
+
+        $data['pageTitle'] = "Dashboard Admin";
+
+        $data['currency'] = "TND";
         
         $this->view('dashboard', $data);
     }

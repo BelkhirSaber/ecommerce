@@ -2,9 +2,17 @@
 
 //-- Enable Display Errors
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
+ini_set('display_errors', 0);
+ini_set('display_startup_errors', 0);
+ini_set('error_log', __DIR__ . '/logs/php-error.log');
 error_reporting(E_ALL);
+
+if($_ENV['DEBUG'] === 'true') {
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    ini_set('error_log', __DIR__ . '/logs/php-error.log');
+    error_reporting(E_ALL);
+}
 
 //-- Get .Env Configuration
 
@@ -33,9 +41,9 @@ define('VIEWS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Views');
 
 define('IMAGE_PATH', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Public' . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . 'images');
 
-//-- Database Config
+//-- Assets URL
+define('ASSETS_URL', '/assets');
+define('CSS_URL', '/assets/css');
+define('JS_URL', '/assets/js');
+define('IMG_URL', '/assets/images');
 
-// define('HOST', '127.0.0.1');
-// define('DB_USERNAME', 'root');
-// define('DB_PASSWORD', '');
-// define('DB_NAME', 'b3s_store');

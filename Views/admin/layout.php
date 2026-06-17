@@ -1,18 +1,21 @@
+<?php require_once __DIR__ . '/../../Config/vite-helper.php'; ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $pageTitle ?? 'Admin Dashboard' ?> | B3S Store</title>
-
-    <!-- Google Font: Source Sans Pro -->
+ 
+    <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AdminLTE CSS -->
+    
+    <!-- AdminLTE CSS (via CDN pour compatibilité) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/<?= RACINE ?>/assets/css/admin/main.css">
+    
+    <!-- CSS compilé par Vite (si nécessaire) -->
+    <?= vite_css('admin-bundle.js') ?>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -25,10 +28,10 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="/<?= RACINE ?>/admin/dashboard" class="nav-link">Dashboard</a>
+                <a href="/admin/dashboard" class="nav-link">Dashboard</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="/<?= RACINE ?>/" target="_blank" class="nav-link">Voir le site</a>
+                <a href="#" target="_blank" class="nav-link">Voir le site</a>
             </li>
         </ul>
 
@@ -69,8 +72,8 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="/<?= RACINE ?>/admin/dashboard" class="brand-link">
-            <img src="/<?= RACINE ?>/assets/images/logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8" onerror="this.style.display='none'">
+        <a href="/admin/dashboard" class="brand-link">
+            <img src="<?= IMG_URL ?>/admin_dash/default_admin_user.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8" onerror="this.style.display='none'">
             <span class="brand-text font-weight-light">B3S Store Admin</span>
         </a>
 
@@ -82,7 +85,7 @@
                     
                     <!-- Dashboard -->
                     <li class="nav-item">
-                        <a href="/<?= RACINE ?>/admin/dashboard" class="nav-link <?= $_SERVER['REQUEST_URI'] == '/'.RACINE.'/admin/dashboard' ? 'active' : '' ?>">
+                        <a href="/admin/dashboard" class="nav-link <?= strpos($_SERVER['REQUEST_URI'],'/admin/dashboard') ? 'active' : '' ?>">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>Dashboard</p>
                         </a>
@@ -198,13 +201,14 @@
     </footer>
 </div>
 
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
-<!-- Custom JS -->
-<script src="/<?= RACINE ?>/assets/js/admin-custom.js"></script>
+<!-- Vite Client (dev only) -->
+<?= vite_client() ?>
+
+<!-- Bundle Admin (jQuery + Bootstrap + AdminLTE + DataTables) -->
+<script type="module" src="<?= vite_asset('admin-bundle.js') ?>"></script>
+
+<!-- Code spécifique admin -->
+<script type="module" src="<?= vite_asset('admin/main.js') ?>"></script>
+
 </body>
 </html>

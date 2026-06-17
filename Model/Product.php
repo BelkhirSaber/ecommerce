@@ -1,29 +1,58 @@
 <?php
 
-/**
- * Author: Saber Belkhir
- * Date: 13-07-2024
- */
-
 namespace Model;
 
-use PDO;
-use PDOException;
-use Foundational\Model\Model;
+use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-  protected string $table = 't_b3s_product';
+    protected $table = 't_b3s_product';
+    protected $primaryKey = 'PK_PRODUCT';
+    
+    const CREATED_AT = 'CREATED_AT';
+    const UPDATED_AT = 'UPDATED_AT';
 
-  public function __construct()
-  {
-    parent::__construct();
-  }
+    protected $fillable = [
+        'FK_CATEGORY', 'SLUG', 'TITLE', 'SHORT_DESCRIPTION', 'IN_STOCK', 'SHOW_IN_STORE'
+    ];
 
-  // -- Get all product
+    protected $casts = [
+        'IN_STOCK' => 'boolean',
+        'SHOW_IN_STORE' => 'boolean'
+    ];
 
-  public function all() {
-    return $this->findAll();
-  }
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'FK_CATEGORY', 'PK_CATEGORY');
+    }
 
+    public function variants()
+    {
+        return $this->hasMany(ProductVariant::class, 'FK_PRODUCT', 'PK_PRODUCT');
+    }
+
+    public function images()
+    {
+        return $this->hasMany(ProductImage::class, 'FK_PRODUCT', 'PK_PRODUCT');
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(ProductReview::class, 'FK_PRODUCT', 'PK_PRODUCT');
+    }
+
+    public function wishlists()
+    {
+        return $this->hasMany(Wishlist::class, 'FK_PRODUCT', 'PK_PRODUCT');
+    }
+
+    public function scopeInStock($query)
+    {
+        return $query->where('IN_STOCK', 1);
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->where('SHOW_IN_STORE', 1);
+    }
 }

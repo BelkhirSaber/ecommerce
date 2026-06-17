@@ -1,32 +1,37 @@
 <?php
 
-/**
- * Author: Saber Belkhir
- * Date: 02-03-2024
- */
-
 namespace Model;
 
-use Foundational\Model\Model;
+use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class User extends Model
 {
-  protected string $table = 't_b3s_user';
+    protected $table = 't_b3s_user';
+    protected $primaryKey = 'PK_USER';
+    
+    const CREATED_AT = 'CREATED_AT';
+    const UPDATED_AT = 'UPDATED_AT';
 
-  public function __construct()
-  {
-    parent::__construct();
+    protected $fillable = [
+        'S_FIRSTNAME', 'S_LASTNAME', 'S_EMAIL', 'S_PASSWORD',
+        'S_PHONE', 'E_ROLE', 'B_ACTIVE'
+    ];
 
-    // echo "user extends model class";
-    // print_r($this->db);
-    $statement = $this->db->prepare("SELECT * FROM $this->table");
-    $statement->execute() or die($statement->errorInfo());
-    while($row = $statement->fetchObject())
+    protected $hidden = ['S_PASSWORD'];
+
+    public function orders()
     {
-      echo "<pre>";
-      print_r($row);
-      echo "</pre>";
+        return $this->hasMany(Order::class, 'FK_CUSTOMER', 'PK_USER');
     }
-    $statement->closeCursor();
-  }
+
+    public function addresses()
+    {
+        return $this->hasMany(Address::class, 'FK_USER', 'PK_USER');
+    }
+
+    public function scopeLast30Days($query)
+    {
+        return $query->where('CREATED_AT', '>=', Carbon::now()->subDays(30));
+    }
 }
