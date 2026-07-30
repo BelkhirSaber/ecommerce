@@ -1,6 +1,4 @@
-.env
-*.lock
-node_modules
-vendor
+node_modules/
+vendor/
 .vscode
-/Model
+.env
