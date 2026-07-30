@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Attribute extends Model {
 
+
+  public $timestamps = false;
+
   protected $table = "t_b3s_attribute";
 
   protected $primaryKey = "PK_ATTRIBUTE";
