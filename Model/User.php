@@ -14,8 +14,15 @@ class User extends Model
     const UPDATED_AT = 'UPDATED_AT';
 
     protected $fillable = [
-        'S_FIRSTNAME', 'S_LASTNAME', 'S_EMAIL', 'S_PASSWORD',
-        'S_PHONE', 'E_ROLE', 'B_ACTIVE'
+        'S_FIRSTNAME',
+        'S_LASTNAME',
+        'S_EMAIL',
+        'S_PASSWORD',
+        'S_PHONE',
+        'E_ROLE',
+        'B_ACTIVE',
+        'S_RESET_TOKEN',
+        'DT_RESET_EXPIRES'
     ];
 
     protected $hidden = ['S_PASSWORD'];
@@ -38,5 +45,10 @@ class User extends Model
     public function scopeLast30Days($query)
     {
         return $query->where('CREATED_AT', '>=', Carbon::now()->subDays(30));
+    }
+
+    public function couponUsages()
+    {
+        return $this->hasMany(CouponUsage::class, 'FK_USER', 'PK_USER');
     }
 }

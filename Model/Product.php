@@ -26,6 +26,11 @@ class Product extends Model
         return $this->belongsTo(Category::class, 'FK_CATEGORY', 'PK_CATEGORY');
     }
 
+    public function productImages()
+    {
+        return $this->hasMany(ProductImage::class, 'FK_PRODUCT', 'PK_PRODUCT');
+    }
+
     public function variants()
     {
         return $this->hasMany(ProductVariant::class, 'FK_PRODUCT', 'PK_PRODUCT');
