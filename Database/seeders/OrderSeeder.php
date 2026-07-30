@@ -8,11 +8,13 @@ use Model\User;
 use Model\ProductVariant;
 use Faker\Factory as Faker;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class OrderSeeder
 {
     public function run()
     {
+
         $faker = Faker::create('fr_FR');
         
         echo "🌱 Seeding Orders...\n";
@@ -25,15 +27,15 @@ class OrderSeeder
             $subtotal = 0;
 
             $order = Order::create([
-                'FK_CUSTOMER' => $customer->PK_USER,
+                'FK_USER' => $customer->PK_USER,
                 'ORDER_NUMBER' => 'ORD-' . strtoupper($faker->bothify('####??##')),
                 'STATUS' => $faker->randomElement(['pending', 'paid', 'processing', 'shipped', 'delivered']),
                 'SUBTOTAL' => 0,
                 'DISCOUNT_AMOUNT' => 0,
                 'SHIPPING_AMOUNT' => $faker->randomFloat(2, 5, 15),
                 'TOTAL_AMOUNT' => 0,
-                'CUSTOMER_NAME' => $customer->S_FIRSTNAME . ' ' . $customer->S_LASTNAME,
-                'CUSTOMER_EMAIL' => $customer->S_EMAIL,
+                'USER_NAME' => $customer->S_FIRSTNAME . ' ' . $customer->S_LASTNAME,
+                'USER_EMAIL' => $customer->S_EMAIL,
                 'SHIPPING_ADDRESS' => $faker->address(),
                 'CREATED_AT' => Carbon::now()->subDays(rand(0, 60))
             ]);

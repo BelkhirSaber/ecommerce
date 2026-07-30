@@ -8,4 +8,6 @@ require_once '../Config/config.php';
 
 require_once '../Config/database.php';
 
+require_once '../Config/vite-helper.php';
+
 require_once '../Router/route.php';

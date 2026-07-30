@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'voku\\' => array($vendorDir . '/voku/portable-ascii/src/voku'),
     'Utilities\\' => array($baseDir . '/Utilities'),
+    'Twig\\' => array($vendorDir . '/twig/twig/src'),
     'Symfony\\Polyfill\\Php85\\' => array($vendorDir . '/symfony/polyfill-php85'),
     'Symfony\\Polyfill\\Php84\\' => array($vendorDir . '/symfony/polyfill-php84'),
     'Symfony\\Polyfill\\Php83\\' => array($vendorDir . '/symfony/polyfill-php83'),
@@ -27,7 +28,7 @@ return array(
     'Model\\' => array($baseDir . '/Model'),
     'Laravel\\SerializableClosure\\' => array($vendorDir . '/laravel/serializable-closure/src'),
     'Lang\\' => array($baseDir . '/Lang'),
-    'Illuminate\\Support\\' => array($vendorDir . '/illuminate/collections', $vendorDir . '/illuminate/conditionable', $vendorDir . '/illuminate/macroable', $vendorDir . '/illuminate/reflection', $vendorDir . '/illuminate/support'),
+    'Illuminate\\Support\\' => array($vendorDir . '/illuminate/support', $vendorDir . '/illuminate/reflection', $vendorDir . '/illuminate/collections', $vendorDir . '/illuminate/conditionable', $vendorDir . '/illuminate/macroable'),
     'Illuminate\\Database\\' => array($vendorDir . '/illuminate/database'),
     'Illuminate\\Contracts\\' => array($vendorDir . '/illuminate/contracts'),
     'Illuminate\\Container\\' => array($vendorDir . '/illuminate/container'),

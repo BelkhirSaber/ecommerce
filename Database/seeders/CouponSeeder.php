@@ -5,11 +5,13 @@ namespace Database\Seeders;
 use Model\Coupon;
 use Faker\Factory as Faker;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class CouponSeeder
 {
     public function run()
     {
+
         $faker = Faker::create('fr_FR');
         
         echo "🌱 Seeding Coupons...\n";

@@ -4,11 +4,13 @@ namespace Database\Seeders;
 
 use Model\Attribute;
 use Model\AttributeValue;
+use Illuminate\Database\Eloquent\Model;
 
 class AttributeSeeder
 {
     public function run()
     {
+        
         echo "🌱 Seeding Attributes...\n";
         
         $attributes = [

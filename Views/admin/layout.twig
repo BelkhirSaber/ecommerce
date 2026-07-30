@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+        {{ pageTitle|default('Admin Dashboard') }} | B3S Store
+    </title>
+
+    <!-- Google Font -->
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
+
+    <!-- AdminLTE -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css"
+    >
+
+    <!-- Vite CSS -->
+    {{ vite_css('admin-bundle.js')|raw }}
+
+    {% block stylesheets %}{% endblock %}
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+
+<div class="wrapper">
+
+    {# Header / Navbar #}
+    {% include 'components/admin/header.twig' %}
+
+    {# Sidebar #}
+    {% include 'components/admin/sidebar.twig' %}
+
+    {# Main Content #}
+    <div class="content-wrapper">
+
+        {# Page Header #}
+        <div class="content-header">
+            <div class="container-fluid">
+
+                <div class="row mb-2">
+
+                    <div class="col-sm-6">
+                        <h1 class="m-0">
+                            {{ pageTitle|default('Dashboard') }}
+                        </h1>
+                    </div>
+
+                    <div class="col-sm-6">
+
+                        <ol class="breadcrumb float-sm-right">
+
+                            <li class="breadcrumb-item">
+                                <a href="{{ base_path }}/admin/dashboard">
+                                    Home
+                                </a>
+                            </li>
+
+                            <li class="breadcrumb-item active">
+                                {{ pageTitle|default('Dashboard') }}
+                            </li>
+
+                        </ol>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        {# Page Content #}
+        <section class="content">
+
+            <div class="container-fluid">
+
+                {% block content %}{% endblock %}
+
+            </div>
+
+        </section>
+
+    </div>
+
+    {# Footer #}
+    {% include 'components/admin/footer.twig' %}
+
+</div>
+
+
+<!-- Vite Client -->
+{{ vite_client()|raw }}
+
+<!-- Admin Bundle -->
+<script
+    type="module"
+    src="{{ vite_asset('admin-bundle.js') }}"
+></script>
+
+<!-- Admin Main JS -->
+<script
+    type="module"
+    src="{{ vite_asset('admin/main.js') }}"
+></script>
+
+{% block javascripts %}{% endblock %}
+
+</body>
+</html>

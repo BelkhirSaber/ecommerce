@@ -8,11 +8,13 @@ use Model\ProductImage;
 use Model\Category;
 use Model\AttributeValue;
 use Faker\Factory as Faker;
+use Illuminate\Support\Facades\DB;
 
 class ProductSeeder
 {
     public function run()
     {
+
         $faker = Faker::create('fr_FR');
         
         echo "🌱 Seeding Products...\n";
@@ -58,10 +60,10 @@ class ProductSeeder
                 ]);
 
                 if ($colors->count() > 0) {
-                    $variant->attributes()->attach($colors->random()->PK_ATTRIBUTE_VALUE);
+                    $variant->attributeValues()->attach($colors->random()->PK_ATTRIBUTE_VALUE);
                 }
                 if ($sizes->count() > 0) {
-                    $variant->attributes()->attach($sizes->random()->PK_ATTRIBUTE_VALUE);
+                    $variant->attributeValues()->attach($sizes->random()->PK_ATTRIBUTE_VALUE);
                 }
             }
         }

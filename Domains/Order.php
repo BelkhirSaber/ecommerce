@@ -9,7 +9,7 @@ class Order {
 
     public function getNbOrderToday()
     {
-        return OrderModel::today()->count();
+        return OrderModel::whereDate('CREATED_AT', Carbon::today())->count();
     }
 
     public function getNbOrder($days = 30)

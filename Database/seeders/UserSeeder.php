@@ -5,11 +5,13 @@ namespace Database\Seeders;
 use Model\User;
 use Model\Address;
 use Faker\Factory as Faker;
+use Illuminate\Support\Facades\DB;
 
 class UserSeeder
 {
     public function run()
     {
+
         $faker = Faker::create('fr_FR');
         
         echo "🌱 Seeding Users...\n";

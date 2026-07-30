@@ -2,8 +2,9 @@
 namespace Admin;
 
 use Domains\Dashboard;
+use Controller\BaseController;
 
-class DashboardController extends AdminBaseController {
+class DashboardController extends BaseController {
     
     public function index() {
 
@@ -14,7 +15,9 @@ class DashboardController extends AdminBaseController {
         $data['pageTitle'] = "Dashboard Admin";
 
         $data['currency'] = "TND";
+
+
         
-        $this->view('dashboard', $data);
+        $this->view('admin/dashboard', $data);
     }
 }

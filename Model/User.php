@@ -30,6 +30,11 @@ class User extends Model
         return $this->hasMany(Address::class, 'FK_USER', 'PK_USER');
     }
 
+    public function reviews()
+    {
+        return $this->hasMany(ProductReview::class, 'FK_USER', 'PK_USER');
+    }
+
     public function scopeLast30Days($query)
     {
         return $query->where('CREATED_AT', '>=', Carbon::now()->subDays(30));

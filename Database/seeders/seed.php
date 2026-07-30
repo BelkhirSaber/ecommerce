@@ -7,6 +7,8 @@ $dotenv->load();
 
 require_once __DIR__ . '/../../Config/database.php';
 
+use Illuminate\Database\Capsule\Manager as Capsule;
+
 use Database\Seeders\CategorySeeder;
 use Database\Seeders\AttributeSeeder;
 use Database\Seeders\ProductSeeder;
@@ -14,12 +16,58 @@ use Database\Seeders\UserSeeder;
 use Database\Seeders\OrderSeeder;
 use Database\Seeders\CouponSeeder;
 
+
+function truncateAllTables(): void
+{
+    $connection = Capsule::connection();
+
+    echo "🗑️  Truncating all tables...\n\n";
+
+    // Désactiver les contraintes FK
+    $connection->statement('SET FOREIGN_KEY_CHECKS=0');
+
+    try {
+        // Récupérer toutes les tables de la base
+        $tables = $connection->select('SHOW TABLES');
+
+        foreach ($tables as $table) {
+            $tableName = array_values((array) $table)[0];
+
+            echo "   Truncating: {$tableName}\n";
+
+            $connection->table($tableName)->truncate();
+        }
+
+        echo "\n✅ All tables truncated successfully\n\n";
+
+    } finally {
+        // Toujours réactiver les FK
+        $connection->statement('SET FOREIGN_KEY_CHECKS=1');
+    }
+}
+
+
 echo "\n";
 echo "═══════════════════════════════════════\n";
 echo "🌱 DATABASE SEEDING STARTED\n";
 echo "═══════════════════════════════════════\n\n";
 
+
 try {
+
+    // ==========================================
+    // 1. RESET DATABASE
+    // ==========================================
+
+    truncateAllTables();
+
+
+    // ==========================================
+    // 2. RUN SEEDERS
+    // ==========================================
+
+    echo "🌱 Running seeders...\n\n";
+
     (new CategorySeeder())->run();
     (new AttributeSeeder())->run();
     (new ProductSeeder())->run();
@@ -27,15 +75,23 @@ try {
     (new OrderSeeder())->run();
     (new CouponSeeder())->run();
 
+
+    // ==========================================
+    // 3. SUCCESS
+    // ==========================================
+
     echo "\n";
     echo "═══════════════════════════════════════\n";
     echo "✅ DATABASE SEEDING COMPLETED\n";
     echo "═══════════════════════════════════════\n";
-    echo "\n📊 Credentials:\n";
-    echo "   Admin: admin@b3s.com / admin123\n";
-    echo "   Customer: password123\n\n";
-    
-} catch (Exception $e) {
+
+} catch (\Throwable $e) {
+
+    echo "\n";
+    echo "═══════════════════════════════════════\n";
+    echo "❌ DATABASE SEEDING FAILED\n";
+    echo "═══════════════════════════════════════\n";
+
     echo "\n❌ ERREUR: " . $e->getMessage() . "\n";
     echo $e->getTraceAsString() . "\n";
 }

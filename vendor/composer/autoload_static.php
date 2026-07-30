@@ -10,30 +10,38 @@ class ComposerStaticInitcdc540639fbf1cb4b940a9197d9773c3
         '662a729f963d39afe703c9d9b7ab4a8c' => __DIR__ . '/..' . '/symfony/polyfill-php83/bootstrap.php',
         '606a39d89246991a373564698c2d8383' => __DIR__ . '/..' . '/symfony/polyfill-php85/bootstrap.php',
         '9d2b9fc6db0f153a0a149fefb182415e' => __DIR__ . '/..' . '/symfony/polyfill-php84/bootstrap.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '23f09fe3194f8c2f70923f90d6702129' => __DIR__ . '/..' . '/illuminate/collections/functions.php',
         '60799491728b879e74601d83e38b2cad' => __DIR__ . '/..' . '/illuminate/collections/helpers.php',
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         '19e6faa27d773988183e0f384143fcad' => __DIR__ . '/..' . '/illuminate/reflection/helpers.php',
         '2203a247e6fda86070a5e4e07aed533a' => __DIR__ . '/..' . '/symfony/clock/Resources/now.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         'f625ee536139dfb962a398b200bdb2bd' => __DIR__ . '/..' . '/illuminate/support/functions.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
+        '89efb1254ef2d1c5d80096acd12c4098' => __DIR__ . '/..' . '/twig/twig/src/Resources/core.php',
+        'ffecb95d45175fd40f75be8a23b34f90' => __DIR__ . '/..' . '/twig/twig/src/Resources/debug.php',
+        'c7baa00073ee9c61edf148c51917cfb4' => __DIR__ . '/..' . '/twig/twig/src/Resources/escaper.php',
+        'f844ccf1d25df8663951193c3fc307c8' => __DIR__ . '/..' . '/twig/twig/src/Resources/string_loader.php',
     );
 
     public static $prefixLengthsPsr4 = array (
-        'v' => 
+        'v' =>
         array (
             'voku\\' => 5,
         ),
-        'U' => 
+        'U' =>
         array (
             'Utilities\\' => 10,
         ),
-        'S' => 
+        'T' =>
+        array (
+            'Twig\\' => 5,
+        ),
+        'S' =>
         array (
             'Symfony\\Polyfill\\Php85\\' => 23,
             'Symfony\\Polyfill\\Php84\\' => 23,
@@ -45,7 +53,7 @@ class ComposerStaticInitcdc540639fbf1cb4b940a9197d9773c3
             'Symfony\\Component\\Translation\\' => 30,
             'Symfony\\Component\\Clock\\' => 24,
         ),
-        'P' => 
+        'P' =>
         array (
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Http\\Message\\' => 17,
@@ -53,215 +61,219 @@ class ComposerStaticInitcdc540639fbf1cb4b940a9197d9773c3
             'Psr\\Clock\\' => 10,
             'PhpOption\\' => 10,
         ),
-        'N' => 
+        'N' =>
         array (
             'Nyholm\\Psr7\\' => 12,
             'Nyholm\\Psr7Server\\' => 18,
         ),
-        'M' => 
+        'M' =>
         array (
             'Model\\' => 6,
         ),
-        'L' => 
+        'L' =>
         array (
             'Laravel\\SerializableClosure\\' => 28,
             'Lang\\' => 5,
         ),
-        'I' => 
+        'I' =>
         array (
             'Illuminate\\Support\\' => 19,
             'Illuminate\\Database\\' => 20,
             'Illuminate\\Contracts\\' => 21,
             'Illuminate\\Container\\' => 21,
         ),
-        'G' => 
+        'G' =>
         array (
             'GrahamCampbell\\ResultType\\' => 26,
         ),
-        'F' => 
+        'F' =>
         array (
             'Foundational\\' => 13,
             'FastRoute\\' => 10,
             'Faker\\' => 6,
         ),
-        'D' => 
+        'D' =>
         array (
             'Dotenv\\' => 7,
             'Domains\\' => 8,
             'Doctrine\\Inflector\\' => 19,
             'Database\\' => 9,
         ),
-        'C' => 
+        'C' =>
         array (
             'Controller\\' => 11,
             'Carbon\\Doctrine\\' => 16,
             'Carbon\\' => 7,
         ),
-        'B' => 
+        'B' =>
         array (
             'Brick\\Math\\' => 11,
         ),
-        'A' => 
+        'A' =>
         array (
             'Admin\\' => 6,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'voku\\' => 
+        'voku\\' =>
         array (
             0 => __DIR__ . '/..' . '/voku/portable-ascii/src/voku',
         ),
-        'Utilities\\' => 
+        'Utilities\\' =>
         array (
             0 => __DIR__ . '/../..' . '/Utilities',
         ),
-        'Symfony\\Polyfill\\Php85\\' => 
+        'Twig\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
+        'Symfony\\Polyfill\\Php85\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php85',
         ),
-        'Symfony\\Polyfill\\Php84\\' => 
+        'Symfony\\Polyfill\\Php84\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php84',
         ),
-        'Symfony\\Polyfill\\Php83\\' => 
+        'Symfony\\Polyfill\\Php83\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php83',
         ),
-        'Symfony\\Polyfill\\Php80\\' => 
+        'Symfony\\Polyfill\\Php80\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
         ),
-        'Symfony\\Polyfill\\Mbstring\\' => 
+        'Symfony\\Polyfill\\Mbstring\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
-        'Symfony\\Polyfill\\Ctype\\' => 
+        'Symfony\\Polyfill\\Ctype\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
-        'Symfony\\Contracts\\Translation\\' => 
+        'Symfony\\Contracts\\Translation\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/translation-contracts',
         ),
-        'Symfony\\Component\\Translation\\' => 
+        'Symfony\\Component\\Translation\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/translation',
         ),
-        'Symfony\\Component\\Clock\\' => 
+        'Symfony\\Component\\Clock\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/clock',
         ),
-        'Psr\\SimpleCache\\' => 
+        'Psr\\SimpleCache\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
         ),
-        'Psr\\Http\\Message\\' => 
+        'Psr\\Http\\Message\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/http-factory/src',
             1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
-        'Psr\\Container\\' => 
+        'Psr\\Container\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
-        'Psr\\Clock\\' => 
+        'Psr\\Clock\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/clock/src',
         ),
-        'PhpOption\\' => 
+        'PhpOption\\' =>
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
         ),
-        'Nyholm\\Psr7\\' => 
+        'Nyholm\\Psr7\\' =>
         array (
             0 => __DIR__ . '/..' . '/nyholm/psr7/src',
         ),
-        'Nyholm\\Psr7Server\\' => 
+        'Nyholm\\Psr7Server\\' =>
         array (
             0 => __DIR__ . '/..' . '/nyholm/psr7-server/src',
         ),
-        'Model\\' => 
+        'Model\\' =>
         array (
             0 => __DIR__ . '/../..' . '/Model',
         ),
-        'Laravel\\SerializableClosure\\' => 
+        'Laravel\\SerializableClosure\\' =>
         array (
             0 => __DIR__ . '/..' . '/laravel/serializable-closure/src',
         ),
-        'Lang\\' => 
+        'Lang\\' =>
         array (
             0 => __DIR__ . '/../..' . '/Lang',
         ),
-        'Illuminate\\Support\\' => 
+        'Illuminate\\Support\\' =>
         array (
-            0 => __DIR__ . '/..' . '/illuminate/collections',
-            1 => __DIR__ . '/..' . '/illuminate/conditionable',
-            2 => __DIR__ . '/..' . '/illuminate/macroable',
-            3 => __DIR__ . '/..' . '/illuminate/reflection',
-            4 => __DIR__ . '/..' . '/illuminate/support',
+            0 => __DIR__ . '/..' . '/illuminate/support',
+            1 => __DIR__ . '/..' . '/illuminate/reflection',
+            2 => __DIR__ . '/..' . '/illuminate/collections',
+            3 => __DIR__ . '/..' . '/illuminate/conditionable',
+            4 => __DIR__ . '/..' . '/illuminate/macroable',
         ),
-        'Illuminate\\Database\\' => 
+        'Illuminate\\Database\\' =>
         array (
             0 => __DIR__ . '/..' . '/illuminate/database',
         ),
-        'Illuminate\\Contracts\\' => 
+        'Illuminate\\Contracts\\' =>
         array (
             0 => __DIR__ . '/..' . '/illuminate/contracts',
         ),
-        'Illuminate\\Container\\' => 
+        'Illuminate\\Container\\' =>
         array (
             0 => __DIR__ . '/..' . '/illuminate/container',
         ),
-        'GrahamCampbell\\ResultType\\' => 
+        'GrahamCampbell\\ResultType\\' =>
         array (
             0 => __DIR__ . '/..' . '/graham-campbell/result-type/src',
         ),
-        'Foundational\\' => 
+        'Foundational\\' =>
         array (
             0 => __DIR__ . '/../..' . '/Foundational/Src',
         ),
-        'FastRoute\\' => 
+        'FastRoute\\' =>
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
         ),
-        'Faker\\' => 
+        'Faker\\' =>
         array (
             0 => __DIR__ . '/..' . '/fakerphp/faker/src/Faker',
         ),
-        'Dotenv\\' => 
+        'Dotenv\\' =>
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
         ),
-        'Domains\\' => 
+        'Domains\\' =>
         array (
             0 => __DIR__ . '/../..' . '/Domains',
         ),
-        'Doctrine\\Inflector\\' => 
+        'Doctrine\\Inflector\\' =>
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/src',
         ),
-        'Database\\' => 
+        'Database\\' =>
         array (
             0 => __DIR__ . '/../..' . '/Database',
         ),
-        'Controller\\' => 
+        'Controller\\' =>
         array (
             0 => __DIR__ . '/../..' . '/Controllers',
         ),
-        'Carbon\\Doctrine\\' => 
+        'Carbon\\Doctrine\\' =>
         array (
             0 => __DIR__ . '/..' . '/carbonphp/carbon-doctrine-types/src/Carbon/Doctrine',
         ),
-        'Carbon\\' => 
+        'Carbon\\' =>
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
-        'Brick\\Math\\' => 
+        'Brick\\Math\\' =>
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
         ),
-        'Admin\\' => 
+        'Admin\\' =>
         array (
             0 => __DIR__ . '/../..' . '/Controllers/Admin',
         ),

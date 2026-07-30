@@ -4,11 +4,14 @@ namespace Database\Seeders;
 
 use Model\Category;
 use Faker\Factory as Faker;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class CategorySeeder
 {
     public function run()
     {
+
         $faker = Faker::create('fr_FR');
         
         echo "🌱 Seeding Categories...\n";

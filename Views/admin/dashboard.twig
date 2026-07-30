@@ -1,0 +1,154 @@
+{% extends "admin/layout.twig" %}
+
+{% set pageTitle = "Dashboard" %}
+
+{% block content %}
+
+    <!-- Info boxes -->
+    <div class="row">
+
+        <div class="col-lg-3 col-6">
+            <div class="small-box bg-info">
+                <div class="inner">
+                    <h3>{{ orders_today|default(0) }}</h3>
+                    <p>Commandes aujourd'hui</p>
+                </div>
+
+                <div class="icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+
+                <a
+                    href="{{ base_path }}/admin/orders"
+                    class="small-box-footer"
+                >
+                    Plus d'infos
+                    <i class="fas fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="col-lg-3 col-6">
+            <div class="small-box bg-danger">
+                <div class="inner">
+                    <h3>{{ orders_month|default(0) }}</h3>
+                    <p>Commandes ce mois</p>
+                </div>
+
+                <div class="icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+
+                <a
+                    href="{{ base_path }}/admin/orders"
+                    class="small-box-footer"
+                >
+                    Plus d'infos
+                    <i class="fas fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="col-lg-3 col-6">
+            <div class="small-box bg-success">
+                <div class="inner">
+                    <h3>
+                        {{ total_revenue|default(0)|number_format(2, '.', ',') }}
+                        {{ currency|default('€') }}
+                    </h3>
+
+                    <p>Chiffre d'affaires</p>
+                </div>
+
+                <div class="icon">
+                    <i class="fas fa-euro-sign"></i>
+                </div>
+
+                <a
+                    href="{{ base_path }}/admin/analytics"
+                    class="small-box-footer"
+                >
+                    Plus d'infos
+                    <i class="fas fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="col-lg-3 col-6">
+            <div class="small-box bg-warning">
+                <div class="inner">
+                    <h3>{{ total_client|default(0) }}</h3>
+                    <p>Clients</p>
+                </div>
+
+                <div class="icon">
+                    <i class="fas fa-users"></i>
+                </div>
+
+                <a
+                    href="{{ base_path }}/admin/customers"
+                    class="small-box-footer"
+                >
+                    Plus d'infos
+                    <i class="fas fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- DataTable - Last 10 orders -->
+    <div class="row">
+        <div class="col-md-12">
+
+            <table id="admin-dashboard" class="display">
+
+                <thead>
+                    <tr>
+                        <th>Column 1</th>
+                        <th>Column 2</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+
+    <!-- Chart -->
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <div class="card">
+
+                <div class="card-header">
+                    <h3 class="card-title">
+                        Ventes mensuelles
+                    </h3>
+                </div>
+
+                <div class="card-body">
+
+                    <canvas
+                        id="salesChart"
+                        style="height: 300px;"
+                    ></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

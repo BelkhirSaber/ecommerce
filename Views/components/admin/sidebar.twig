@@ -1,0 +1,290 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+    {# Brand Logo #}
+
+    <a
+        href="{{ base_path }}/admin/dashboard"
+        class="brand-link"
+    >
+
+        <img
+            src="{{ IMG_URL }}/admin_dash/default_admin_user.png"
+            alt="Logo"
+            class="brand-image img-circle elevation-3"
+            style="opacity: .8"
+            onerror="this.style.display='none'"
+        >
+
+        <span class="brand-text font-weight-light">
+            B3S Store Admin
+        </span>
+
+    </a>
+
+
+    {# Sidebar #}
+
+    <div class="sidebar">
+
+        <nav class="mt-2">
+
+            <ul
+                class="nav nav-pills nav-sidebar flex-column"
+                data-widget="treeview"
+                role="menu"
+                data-accordion="false"
+            >
+
+
+                {# =====================
+                   Dashboard
+                   ===================== #}
+
+                <li class="nav-item">
+
+                    <a
+                        href="{{ base_path }}/admin/dashboard"
+                        class="nav-link
+                            {{ currentPath starts with '/admin/dashboard'
+                                ? 'active'
+                                : ''
+                            }}"
+                    >
+
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+
+                        <p>
+                            Dashboard
+                        </p>
+
+                    </a>
+
+                </li>
+
+
+                {# =====================
+                   Catalogue
+                   ===================== #}
+
+                {% set catalogueActive =
+                    currentPath starts with '/admin/products'
+                    or currentPath starts with '/admin/categories'
+                %}
+
+
+                <li
+                    class="nav-item
+                        {{ catalogueActive ? 'menu-open' : '' }}"
+                >
+
+                    <a
+                        href="#"
+                        class="nav-link
+                            {{ catalogueActive ? 'active' : '' }}"
+                    >
+
+                        <i class="nav-icon fas fa-box"></i>
+
+                        <p>
+
+                            Catalogue
+
+                            <i class="right fas fa-angle-left"></i>
+
+                        </p>
+
+                    </a>
+
+
+                    <ul class="nav nav-treeview">
+
+                        <li class="nav-item">
+
+                            <a
+                                href="{{ base_path }}/admin/products"
+                                class="nav-link
+                                    {{ currentPath starts with '/admin/products'
+                                        ? 'active'
+                                        : ''
+                                    }}"
+                            >
+
+                                <i class="far fa-circle nav-icon"></i>
+
+                                <p>
+                                    Produits
+                                </p>
+
+                            </a>
+
+                        </li>
+
+
+                        <li class="nav-item">
+
+                            <a
+                                href="{{ base_path }}/admin/categories"
+                                class="nav-link
+                                    {{ currentPath starts with '/admin/categories'
+                                        ? 'active'
+                                        : ''
+                                    }}"
+                            >
+
+                                <i class="far fa-circle nav-icon"></i>
+
+                                <p>
+                                    Catégories
+                                </p>
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </li>
+
+
+                {# =====================
+                   Commandes
+                   ===================== #}
+
+                <li class="nav-item">
+
+                    <a
+                        href="{{ base_path }}/admin/orders"
+                        class="nav-link
+                            {{ currentPath starts with '/admin/orders'
+                                ? 'active'
+                                : ''
+                            }}"
+                    >
+
+                        <i class="nav-icon fas fa-shopping-cart"></i>
+
+                        <p>
+
+                            Commandes
+
+                            <span class="badge badge-info right">
+                                {{ ordersCount|default(0) }}
+                            </span>
+
+                        </p>
+
+                    </a>
+
+                </li>
+
+
+                {# =====================
+                   Clients
+                   ===================== #}
+
+                <li class="nav-item">
+
+                    <a
+                        href="{{ base_path }}/admin/customers"
+                        class="nav-link
+                            {{ currentPath starts with '/admin/customers'
+                                ? 'active'
+                                : ''
+                            }}"
+                    >
+
+                        <i class="nav-icon fas fa-users"></i>
+
+                        <p>
+                            Clients
+                        </p>
+
+                    </a>
+
+                </li>
+
+
+                {# =====================
+                   Coupons
+                   ===================== #}
+
+                <li class="nav-item">
+
+                    <a
+                        href="{{ base_path }}/admin/coupons"
+                        class="nav-link
+                            {{ currentPath starts with '/admin/coupons'
+                                ? 'active'
+                                : ''
+                            }}"
+                    >
+
+                        <i class="nav-icon fas fa-tags"></i>
+
+                        <p>
+                            Coupons
+                        </p>
+
+                    </a>
+
+                </li>
+
+
+                {# =====================
+                   Analytics
+                   ===================== #}
+
+                <li class="nav-item">
+
+                    <a
+                        href="{{ base_path }}/admin/analytics"
+                        class="nav-link
+                            {{ currentPath starts with '/admin/analytics'
+                                ? 'active'
+                                : ''
+                            }}"
+                    >
+
+                        <i class="nav-icon fas fa-chart-line"></i>
+
+                        <p>
+                            Analytics
+                        </p>
+
+                    </a>
+
+                </li>
+
+
+                {# =====================
+                   Paramètres
+                   ===================== #}
+
+                <li class="nav-item">
+
+                    <a
+                        href="{{ base_path }}/admin/settings"
+                        class="nav-link
+                            {{ currentPath starts with '/admin/settings'
+                                ? 'active'
+                                : ''
+                            }}"
+                    >
+
+                        <i class="nav-icon fas fa-cog"></i>
+
+                        <p>
+                            Paramètres
+                        </p>
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</aside>
