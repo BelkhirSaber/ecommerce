@@ -1,4 +1,7 @@
 node_modules/
 vendor/
+!Public/assets/js/vendor/
+!Public/assets/js/vendor/datatables/
 .vscode
 .env
+Public/assets/dist/

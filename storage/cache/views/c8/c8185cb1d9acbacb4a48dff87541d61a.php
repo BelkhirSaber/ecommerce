@@ -183,6 +183,11 @@ class __TwigTemplate_3fb9490d616f2a17c424daa07346c2c7 extends Template
 
     </div>
 
+    ";
+        // line 104
+        yield "
+    
+
 
     <!-- DataTable - Last 10 orders -->
     <div class=\"row\">
@@ -221,10 +226,7 @@ class __TwigTemplate_3fb9490d616f2a17c424daa07346c2c7 extends Template
 
                 <div class=\"card-body\">
 
-                    <canvas
-                        id=\"salesChart\"
-                        style=\"height: 300px;\"
-                    ></canvas>
+                    <canvas id=\"salesChart\"></canvas>
 
                 </div>
 
@@ -259,7 +261,7 @@ class __TwigTemplate_3fb9490d616f2a17c424daa07346c2c7 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  174 => 92,  162 => 83,  146 => 70,  132 => 59,  128 => 58,  111 => 44,  99 => 35,  83 => 22,  71 => 13,  62 => 6,  55 => 5,  50 => 1,  48 => 3,  41 => 1,);
+        return array (  188 => 104,  174 => 92,  162 => 83,  146 => 70,  132 => 59,  128 => 58,  111 => 44,  99 => 35,  83 => 22,  71 => 13,  62 => 6,  55 => 5,  50 => 1,  48 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -366,6 +368,10 @@ class __TwigTemplate_3fb9490d616f2a17c424daa07346c2c7 extends Template
 
     </div>
 
+    {# -- chart de ventes -- #}
+
+    
+
 
     <!-- DataTable - Last 10 orders -->
     <div class=\"row\">
@@ -404,10 +410,7 @@ class __TwigTemplate_3fb9490d616f2a17c424daa07346c2c7 extends Template
 
                 <div class=\"card-body\">
 
-                    <canvas
-                        id=\"salesChart\"
-                        style=\"height: 300px;\"
-                    ></canvas>
+                    <canvas id=\"salesChart\"></canvas>
 
                 </div>
 

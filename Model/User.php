@@ -42,13 +42,13 @@ class User extends Model
         return $this->hasMany(ProductReview::class, 'FK_USER', 'PK_USER');
     }
 
-    public function scopeLast30Days($query)
-    {
-        return $query->where('CREATED_AT', '>=', Carbon::now()->subDays(30));
-    }
-
     public function couponUsages()
     {
         return $this->hasMany(CouponUsage::class, 'FK_USER', 'PK_USER');
+    }
+
+    public function scopeLast30Days($query)
+    {
+        return $query->where('CREATED_AT', '>=', Carbon::now()->subDays(30));
     }
 }

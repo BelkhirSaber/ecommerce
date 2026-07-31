@@ -26,9 +26,25 @@ $dotenv->load();
 
 $_SESSION['lang'] = $_ENV['DEFAULT_LANG'];
 
-//-- Racine
+//-- Racine (calculée dynamiquement, aucun chemin en dur)
+// Préfixe URL entre le DOCUMENT_ROOT et la racine du projet :
+//   - docroot = htdocs, projet = htdocs/ecommerce  => RACINE='ecommerce'  (URL /ecommerce/...)
+//   - docroot = Public/ (ou = racine du projet)    => RACINE=''           (URL /...)
+$projectRoot = realpath(__DIR__ . DIRECTORY_SEPARATOR . '..');
+$docRoot = !empty($_SERVER['DOCUMENT_ROOT']) ? realpath($_SERVER['DOCUMENT_ROOT']) : false;
 
-define('RACINE', 'ecommerce');
+if ($docRoot !== false && $projectRoot !== false) {
+    $doc = rtrim(str_replace('\\', '/', $docRoot), '/');
+    $proj = rtrim(str_replace('\\', '/', $projectRoot), '/');
+
+    if (stripos($proj, $doc . '/') === 0) {
+        define('RACINE', ltrim(substr($proj, strlen($doc)), '/'));
+    } else {
+        define('RACINE', '');
+    }
+} else {
+    define('RACINE', '');
+}
 
 // -- Assets
 define('ASSETS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Public' . DIRECTORY_SEPARATOR . 'assets' );

@@ -1,15 +1,10 @@
-<!-- Styles -->
-<link rel="stylesheet" href="<?php echo $utility::assets('css/product/styles.css')?>">
-<!-- Scripts -->
-<script src="<?php echo $utility::assets('js/product/main.js') ?>"></script>
-
 <!-- Page content -->
 <div class="row add-product">
 
   <div class="col-12 d-flex justify-content-between pb-3">
-    <h4 class="text-custom-color"><i class='bx bxs-purchase-tag bx-sm px-2'></i>Add New Product</h4>
+    <h4 class="text-custom-color"><i class="fas fa-tag"></i>Add New Product</h4>
     <div class="">
-      <button class="btn btn-primary rounded-5" type="button" form="product" onclick="addProduct(event, this)">Save</button>
+      <button class="btn btn-primary rounded-5" type="button" id="saveProductBtn">Save</button>
     </div>
   </div>
 

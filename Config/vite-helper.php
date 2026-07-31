@@ -1,5 +1,10 @@
 <?php
 
+function assets_base() {
+    $prefix = RACINE === '' ? '' : '/' . RACINE;
+    return $prefix . '/assets/dist/';
+}
+
 function vite_asset($entry) {
     $isDev = !file_exists(__DIR__ . '/../Public/assets/dist/manifest.json');
     
@@ -16,7 +21,7 @@ function vite_asset($entry) {
     
     $file = "assets/js/{$entry}";
     if (isset($manifest[$file])) {
-        return '/assets/dist/' . $manifest[$file]['file'];
+        return assets_base() . $manifest[$file]['file'];
     }
     
     return '';
@@ -47,13 +52,36 @@ function vite_css($entry) {
     );
     
     $file = "assets/js/{$entry}";
-    if (isset($manifest[$file]['css'])) {
-        $output = '';
-        foreach ($manifest[$file]['css'] as $cssFile) {
-            $output .= '<link rel="stylesheet" href="/assets/dist/' . $cssFile . '">';
-        }
-        return $output;
+    if (!isset($manifest[$file])) {
+        return '';
     }
     
-    return '';
+    $base = assets_base();
+    $output = '';
+    $seen = [];
+    $stack = [$manifest[$file]];
+    
+    while (!empty($stack)) {
+        $item = array_shift($stack);
+        
+        if (isset($item['css'])) {
+            foreach ($item['css'] as $cssFile) {
+                if (!in_array($cssFile, $seen)) {
+                    $output .= '<link rel="stylesheet" href="' . $base . $cssFile . '">';
+                    $seen[] = $cssFile;
+                }
+            }
+        }
+        
+        if (isset($item['imports'])) {
+            foreach ($item['imports'] as $import) {
+                if (isset($manifest[$import]) && !in_array($import, $seen)) {
+                    $stack[] = $manifest[$import];
+                    $seen[] = $import;
+                }
+            }
+        }
+    }
+    
+    return $output;
 }

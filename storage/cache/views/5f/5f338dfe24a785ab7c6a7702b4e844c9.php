@@ -60,8 +60,6 @@ class __TwigTemplate_fb534dc0aeace943f73f7e40cf93fbb8 extends Template
         yield "/admin_dash/default_admin_user.png\"
             alt=\"Logo\"
             class=\"brand-image img-circle elevation-3\"
-            style=\"opacity: .8\"
-            onerror=\"this.style.display=\x27none\x27\"
         >
 
         <span class=\"brand-text font-weight-light\">
@@ -72,7 +70,7 @@ class __TwigTemplate_fb534dc0aeace943f73f7e40cf93fbb8 extends Template
 
 
     ";
-        // line 26
+        // line 24
         yield "
     <div class=\"sidebar\">
 
@@ -87,20 +85,20 @@ class __TwigTemplate_fb534dc0aeace943f73f7e40cf93fbb8 extends Template
 
 
                 ";
-        // line 42
+        // line 40
         yield "
                 <li class=\"nav-item\">
 
                     <a
                         href=\"";
-        // line 46
+        // line 44
         yield (string) $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["base_path"] ?? null), "html", null, true);
         yield "/admin/dashboard\"
                         class=\"nav-link
                             ";
-        // line 48
+        // line 46
         yield (string) (((is_string($_v0 = ($context["currentPath"] ?? null)) && is_string($_v1 = "/admin/dashboard") && str_starts_with($_v0, $_v1))) ? ("active") : (""));
-        // line 51
+        // line 49
         yield "\"
                     >
 
@@ -116,20 +114,20 @@ class __TwigTemplate_fb534dc0aeace943f73f7e40cf93fbb8 extends Template
 
 
                 ";
-        // line 68
+        // line 66
         yield "
                 ";
-        // line 69
-        $context["catalogueActive"] = ((is_string($_v2 =         // line 70
-($context["currentPath"] ?? null)) && is_string($_v3 = "/admin/products") && str_starts_with($_v2, $_v3)) || (is_string($_v4 =         // line 71
+        // line 67
+        $context["catalogueActive"] = ((is_string($_v2 =         // line 68
+($context["currentPath"] ?? null)) && is_string($_v3 = "/admin/products") && str_starts_with($_v2, $_v3)) || (is_string($_v4 =         // line 69
 ($context["currentPath"] ?? null)) && is_string($_v5 = "/admin/categories") && str_starts_with($_v4, $_v5)));
-        // line 73
+        // line 71
         yield "
 
                 <li
                     class=\"nav-item
                         ";
-        // line 77
+        // line 75
         yield (string) (((($tmp = ($context["catalogueActive"] ?? null)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ("menu-open") : (""));
         yield "\"
                 >
@@ -138,7 +136,7 @@ class __TwigTemplate_fb534dc0aeace943f73f7e40cf93fbb8 extends Template
                         href=\"#\"
                         class=\"nav-link
                             ";
-        // line 83
+        // line 81
         yield (string) (((($tmp = ($context["catalogueActive"] ?? null)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ("active") : (""));
         yield "\"
                     >
@@ -162,14 +160,14 @@ class __TwigTemplate_fb534dc0aeace943f73f7e40cf93fbb8 extends Template
 
                             <a
                                 href=\"";
-        // line 104
+        // line 102
         yield (string) $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["base_path"] ?? null), "html", null, true);
         yield "/admin/products\"
                                 class=\"nav-link
                                     ";
-        // line 106
+        // line 104
         yield (string) (((is_string($_v6 = ($context["currentPath"] ?? null)) && is_string($_v7 = "/admin/products") && str_starts_with($_v6, $_v7))) ? ("active") : (""));
-        // line 109
+        // line 107
         yield "\"
                             >
 
@@ -188,14 +186,14 @@ class __TwigTemplate_fb534dc0aeace943f73f7e40cf93fbb8 extends Template
 
                             <a
                                 href=\"";
-        // line 126
+        // line 124
         yield (string) $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["base_path"] ?? null), "html", null, true);
         yield "/admin/categories\"
                                 class=\"nav-link
                                     ";
-        // line 128
+        // line 126
         yield (string) (((is_string($_v8 = ($context["currentPath"] ?? null)) && is_string($_v9 = "/admin/categories") && str_starts_with($_v8, $_v9))) ? ("active") : (""));
-        // line 131
+        // line 129
         yield "\"
                             >
 
@@ -215,20 +213,20 @@ class __TwigTemplate_fb534dc0aeace943f73f7e40cf93fbb8 extends Template
 
 
                 ";
-        // line 152
+        // line 150
         yield "
                 <li class=\"nav-item\">
 
                     <a
                         href=\"";
-        // line 156
+        // line 154
         yield (string) $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["base_path"] ?? null), "html", null, true);
         yield "/admin/orders\"
                         class=\"nav-link
                             ";
-        // line 158
+        // line 156
         yield (string) (((is_string($_v10 = ($context["currentPath"] ?? null)) && is_string($_v11 = "/admin/orders") && str_starts_with($_v10, $_v11))) ? ("active") : (""));
-        // line 161
+        // line 159
         yield "\"
                     >
 
@@ -240,7 +238,7 @@ class __TwigTemplate_fb534dc0aeace943f73f7e40cf93fbb8 extends Template
 
                             <span class=\"badge badge-info right\">
                                 ";
-        // line 171
+        // line 169
         yield (string) $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((array_key_exists("ordersCount", $context)) ? (Twig\Extension\CoreExtension::default(($context["ordersCount"] ?? null), 0)) : (0)), "html", null, true);
         yield "
                             </span>
@@ -253,20 +251,20 @@ class __TwigTemplate_fb534dc0aeace943f73f7e40cf93fbb8 extends Template
 
 
                 ";
-        // line 184
+        // line 182
         yield "
                 <li class=\"nav-item\">
 
                     <a
                         href=\"";
-        // line 188
+        // line 186
         yield (string) $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["base_path"] ?? null), "html", null, true);
         yield "/admin/customers\"
                         class=\"nav-link
                             ";
-        // line 190
+        // line 188
         yield (string) (((is_string($_v12 = ($context["currentPath"] ?? null)) && is_string($_v13 = "/admin/customers") && str_starts_with($_v12, $_v13))) ? ("active") : (""));
-        // line 193
+        // line 191
         yield "\"
                     >
 
@@ -282,20 +280,20 @@ class __TwigTemplate_fb534dc0aeace943f73f7e40cf93fbb8 extends Template
 
 
                 ";
-        // line 210
+        // line 208
         yield "
                 <li class=\"nav-item\">
 
                     <a
                         href=\"";
-        // line 214
+        // line 212
         yield (string) $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["base_path"] ?? null), "html", null, true);
         yield "/admin/coupons\"
                         class=\"nav-link
                             ";
-        // line 216
+        // line 214
         yield (string) (((is_string($_v14 = ($context["currentPath"] ?? null)) && is_string($_v15 = "/admin/coupons") && str_starts_with($_v14, $_v15))) ? ("active") : (""));
-        // line 219
+        // line 217
         yield "\"
                     >
 
@@ -311,20 +309,20 @@ class __TwigTemplate_fb534dc0aeace943f73f7e40cf93fbb8 extends Template
 
 
                 ";
-        // line 236
+        // line 234
         yield "
                 <li class=\"nav-item\">
 
                     <a
                         href=\"";
-        // line 240
+        // line 238
         yield (string) $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["base_path"] ?? null), "html", null, true);
         yield "/admin/analytics\"
                         class=\"nav-link
                             ";
-        // line 242
+        // line 240
         yield (string) (((is_string($_v16 = ($context["currentPath"] ?? null)) && is_string($_v17 = "/admin/analytics") && str_starts_with($_v16, $_v17))) ? ("active") : (""));
-        // line 245
+        // line 243
         yield "\"
                     >
 
@@ -340,20 +338,20 @@ class __TwigTemplate_fb534dc0aeace943f73f7e40cf93fbb8 extends Template
 
 
                 ";
-        // line 262
+        // line 260
         yield "
                 <li class=\"nav-item\">
 
                     <a
                         href=\"";
-        // line 266
+        // line 264
         yield (string) $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["base_path"] ?? null), "html", null, true);
         yield "/admin/settings\"
                         class=\"nav-link
                             ";
-        // line 268
+        // line 266
         yield (string) (((is_string($_v18 = ($context["currentPath"] ?? null)) && is_string($_v19 = "/admin/settings") && str_starts_with($_v18, $_v19))) ? ("active") : (""));
-        // line 271
+        // line 269
         yield "\"
                     >
 
@@ -398,7 +396,7 @@ class __TwigTemplate_fb534dc0aeace943f73f7e40cf93fbb8 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  357 => 271,  355 => 268,  350 => 266,  344 => 262,  328 => 245,  326 => 242,  321 => 240,  315 => 236,  299 => 219,  297 => 216,  292 => 214,  286 => 210,  270 => 193,  268 => 190,  263 => 188,  257 => 184,  244 => 171,  232 => 161,  230 => 158,  225 => 156,  219 => 152,  199 => 131,  197 => 128,  192 => 126,  173 => 109,  171 => 106,  166 => 104,  142 => 83,  133 => 77,  127 => 73,  125 => 71,  124 => 70,  123 => 69,  120 => 68,  104 => 51,  102 => 48,  97 => 46,  91 => 42,  76 => 26,  59 => 11,  51 => 6,  47 => 4,  43 => 1,);
+        return array (  355 => 269,  353 => 266,  348 => 264,  342 => 260,  326 => 243,  324 => 240,  319 => 238,  313 => 234,  297 => 217,  295 => 214,  290 => 212,  284 => 208,  268 => 191,  266 => 188,  261 => 186,  255 => 182,  242 => 169,  230 => 159,  228 => 156,  223 => 154,  217 => 150,  197 => 129,  195 => 126,  190 => 124,  171 => 107,  169 => 104,  164 => 102,  140 => 81,  131 => 75,  125 => 71,  123 => 69,  122 => 68,  121 => 67,  118 => 66,  102 => 49,  100 => 46,  95 => 44,  89 => 40,  74 => 24,  59 => 11,  51 => 6,  47 => 4,  43 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -416,8 +414,6 @@ class __TwigTemplate_fb534dc0aeace943f73f7e40cf93fbb8 extends Template
             src=\"{{ IMG_URL }}/admin_dash/default_admin_user.png\"
             alt=\"Logo\"
             class=\"brand-image img-circle elevation-3\"
-            style=\"opacity: .8\"
-            onerror=\"this.style.display=\x27none\x27\"
         >
 
         <span class=\"brand-text font-weight-light\">

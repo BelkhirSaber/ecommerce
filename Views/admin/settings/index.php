@@ -1,6 +1,6 @@
 <div class="row settings">
   <div class="col-12 d-flex justify-content-between pb-3">
-    <h4 class="text-custom-color"><i class='bx bx-cog bx-sm px-2'></i>Settings</h4>
+    <h4 class="text-custom-color"><i class="fas fa-cog"></i>Settings</h4>
   </div>
 
   <!-- General Settings

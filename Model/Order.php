@@ -2,6 +2,7 @@
 
 namespace Model;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model {
@@ -35,6 +36,11 @@ class Order extends Model {
   public function orderItems() 
   {
       return $this->hasMany(OrderItem::class, 'FK_ORDER', 'PK_ORDER');
+  }
+
+  public function scopeLast30Days($query)
+  {
+      return $query->where('CREATED_AT', '>=', Carbon::now()->subDays(30));
   }
 
 }

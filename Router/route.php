@@ -75,9 +75,9 @@ if (false !== $pos = strpos($uri, '?')) {
 }
 $uri = rawurldecode($uri);
 
-// Retirer le préfixe du projet (pour XAMPP)
-$basePath = '/' . RACINE;
-if (strpos($uri, $basePath) === 0) {
+// Retirer le préfixe du projet (ex: /ecommerce sur XAMPP). Vide si docroot = Public/
+$basePath = RACINE === '' ? '' : '/' . RACINE;
+if ($basePath !== '' && strpos($uri, $basePath) === 0) {
     $uri = substr($uri, strlen($basePath));
 }
 if (empty($uri)) {
